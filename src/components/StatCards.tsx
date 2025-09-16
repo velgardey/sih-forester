@@ -1,216 +1,230 @@
 'use client';
 
-import { Shield, CircleGauge, Leaf, Flame, Users } from 'lucide-react';
+import { useState } from 'react';
+import {
+  Shield, Leaf, Flame, Users, Map, CheckCircle2, XCircle,
+  Layers, Handshake, Droplet, Tent, ChevronRight, X,
+  AlertTriangle,
+  UserCheck
+} from 'lucide-react';
 
-interface ForestStats {
-  protection: {
-    coverage: number;
-    protectedAreas: number;
-    status: string;
+// --- DATA STRUCTURE (No changes needed) ---
+interface ForestData {
+  name: string;
+  schemeEligibility: {
+    pmKisan: boolean;
+    jalJeevan: boolean;
+    mgnrega: boolean;
+    dajgua: boolean;
   };
-  monitoring: {
-    activeSensors: number;
-    sensorTypes: number;
+  landUse: {
+    forestCover: number;
+    agriculturalLand: number;
+    waterBodies: number;
+    homesteads: number;
+    totalArea: number;
+  };
+  dataLayers: {
+    classificationModel: string;
+    groundwaterLevel: string;
+    infrastructureScore: number;
+  };
+  fra: {
     coverage: string;
-  };
-  alerts: {
-    active: number;
-    resolved: number;
-    riskLevel: string;
+    granted: number;
+    claims: number;
+    status: string;
   };
   conservation: {
     biodiversityIndex: number;
     endangeredSpecies: number;
     status: string;
   };
-  fireRisk: {
-    level: string;
-    percentage: number;
+  risk: {
+    fireLevel: string;
+    firePercentage: number;
     lastIncident: string;
   };
-  visitors: {
-    annual: string;
-    currentMonth: string;
+  community: {
+    households: number;
+    dependence: string;
     trend: string;
   };
 }
 
-interface StatCardsProps {
-  forestName: string;
-  stats: ForestStats;
+interface StatCardProps {
+  forest: ForestData;
+  onClose: () => void; // Add a prop to handle closing the panel
 }
 
-export default function StatCards({ forestName, stats }: StatCardsProps) {
+// --- REFACTORED COLLAPSIBLE COMPONENT ---
+export default function ForestDashboardSidebar({ forest, onClose }: StatCardProps) {
+  const [activeTab, setActiveTab] = useState('Land Use');
+  const [isCollapsed, setIsCollapsed] = useState(false);
+
+  // Helper components and functions remain the same
   const getStatusColor = (status: string) => {
-    switch (status.toLowerCase()) {
-      case 'protected':
-      case 'excellent':
-      case 'thriving':
-        return 'bg-green-500';
-      case 'stable':
-      case 'good':
-        return 'bg-blue-500';
-      case 'at risk':
-      case 'declining':
-        return 'bg-yellow-500';
-      case 'critical':
-        return 'bg-red-500';
-      default:
-        return 'bg-gray-500';
+    switch (status?.toLowerCase()) {
+      case 'active': case 'stable': return 'text-green-600 bg-green-100';
+      case 'ongoing': case 'at risk': return 'text-yellow-600 bg-yellow-100';
+      case 'critical': return 'text-red-600 bg-red-100';
+      default: return 'text-gray-600 bg-gray-100';
     }
   };
-
   const getRiskColor = (level: string) => {
-    switch (level.toLowerCase()) {
-      case 'very low':
-        return 'bg-green-500';
-      case 'low':
-        return 'bg-blue-500';
-      case 'medium':
-        return 'bg-yellow-500';
-      case 'high':
-        return 'bg-orange-500';
-      case 'very high':
-        return 'bg-red-500';
-      default:
-        return 'bg-gray-500';
+    switch (level?.toLowerCase()) {
+      case 'low': return 'text-green-600 bg-green-100';
+      case 'medium': return 'text-yellow-600 bg-yellow-100';
+      case 'high': return 'text-orange-600 bg-orange-100';
+      default: return 'text-gray-600 bg-gray-100';
     }
   };
-
-  const getTrendIcon = (trend: string) => {
-    switch (trend) {
-      case 'up':
-        return '↗️';
-      case 'down':
-        return '↘️';
-      case 'stable':
-        return '➡️';
-      default:
-        return '';
-    }
+  const SchemeStatus = ({ name, isEligible }: { name: string; isEligible: boolean }) => (
+    <div className={`flex items-center gap-2 p-2 rounded-md ${isEligible ? 'bg-green-50' : 'bg-red-50'}`}>
+      {isEligible ? <CheckCircle2 className="h-5 w-5 text-green-500" /> : <XCircle className="h-5 w-5 text-red-500" />}
+      <div>
+        <p className="text-xs font-semibold text-gray-700">{name}</p>
+        <p className={`text-xs font-bold ${isEligible ? 'text-green-600' : 'text-red-600'}`}>
+          {isEligible ? 'Eligible' : 'Not Eligible'}
+        </p>
+      </div>
+    </div>
+  );
+  const LandUseBar = ({ value, total, label, color }: { value: number, total: number, label: string, color: string }) => {
+    const percentage = total > 0 ? (value / total) * 100 : 0;
+    return (
+      <div>
+        <div className="flex justify-between items-center mb-1">
+          <p className="text-xs font-medium text-gray-600">{label}</p>
+          <p className="text-xs font-bold text-gray-800">{value} sq km</p>
+        </div>
+        <div className="w-full bg-gray-200 rounded-full h-2"><div className={`${color} h-2 rounded-full`} style={{ width: `${percentage}%` }}></div></div>
+      </div>
+    );
   };
+  const TABS = ['Land Use', 'FRA & Community', 'Risk & Conservation'];
 
   return (
-    <div className="absolute bottom-4 left-4 right-4 z-[9999] pointer-events-none">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-6xl mx-auto">
-        {/* Protection Coverage Card */}
-        <div className="bg-white/95 backdrop-blur-sm rounded-lg p-4 shadow-lg pointer-events-auto border border-white/20">
-          <div className="flex items-center justify-between mb-3">
-            <h3 className="text-sm font-semibold text-gray-700 flex items-center gap-2">
-              <Shield className="h-4 w-4 text-green-600" />
-              Protection Coverage
-            </h3>
-            <button className="text-xs text-blue-600 hover:text-blue-800">See all</button>
+    <div className={`absolute top-4 left-4 bottom-4 z-[1999] pointer-events-auto transition-all duration-300 ease-in-out ${isCollapsed ? 'w-16' : 'w-[450px]'}`}>
+      <div className="relative h-full bg-white/95 rounded-xl shadow-2xl border border-gray-200 flex flex-col overflow-hidden">
+
+        {/* --- TOGGLE BUTTON --- */}
+        <button
+          onClick={() => setIsCollapsed(!isCollapsed)}
+          className="absolute top-4 right-4 z-10 p-1 bg-gray-100 hover:bg-gray-200 rounded-full text-gray-600 transition-transform"
+          style={{ transform: isCollapsed ? 'translateX(calc(450px - 5rem))' : 'translateX(0)' }} // Moves button when collapsed
+        >
+          <ChevronRight className={`h-5 w-5 transition-transform duration-300 ${isCollapsed ? 'rotate-0' : 'rotate-180'}`} />
+        </button>
+
+        {/* --- COLLAPSED VIEW --- */}
+        <div className={`transition-opacity duration-300 ease-in-out ${isCollapsed ? 'opacity-100' : 'opacity-0'}`}>
+          <h3 className="text-gray-700 font-semibold [writing-mode:vertical-rl] rotate-180 p-4 whitespace-nowrap">
+            {forest.name}
+          </h3>
+        </div>
+
+        {/* --- EXPANDED VIEW --- */}
+        <div className={`flex-grow p-5 transition-opacity duration-300 ease-in-out absolute inset-0 ${isCollapsed ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
+          <div className="flex justify-between items-start">
+            <h2 className="text-xl font-bold text-gray-800 mb-3 pr-8">{forest.name}</h2>
+            <button onClick={onClose} className="p-1 text-gray-500 hover:text-gray-800"><X size={20} /></button>
           </div>
-          
-          <div className="space-y-3">
-            {/* Circular Progress */}
-            <div className="flex items-center justify-center">
-              <div className="relative w-16 h-16">
-                <svg className="w-16 h-16 transform -rotate-90" viewBox="0 0 36 36">
-                  <path
-                    d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-                    fill="none"
-                    stroke="#e5e7eb"
-                    strokeWidth="2"
-                  />
-                  <path
-                    d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-                    fill="none"
-                    stroke="#10b981"
-                    strokeWidth="2"
-                    strokeDasharray={`${stats.protection.coverage}, 100`}
-                  />
-                </svg>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-lg font-bold text-green-600">
-                    {stats.protection.coverage}%
-                  </span>
+
+          {/* Scheme Eligibility Section */}
+          <div className="mb-4">
+            <h3 className="text-sm font-semibold flex items-center gap-2 text-gray-700 mb-2">
+              <Handshake className="h-4 w-4 text-blue-600" />
+              Scheme Eligibility
+            </h3>
+            <div className="grid grid-cols-2 gap-2">
+              <SchemeStatus name="PM-KISAN" isEligible={forest.schemeEligibility.pmKisan} />
+              <SchemeStatus name="Jal Jeevan" isEligible={forest.schemeEligibility.jalJeevan} />
+              <SchemeStatus name="MGNREGA" isEligible={forest.schemeEligibility.mgnrega} />
+              <SchemeStatus name="DAJGUA" isEligible={forest.schemeEligibility.dajgua} />
+            </div>
+          </div>
+
+          {/* Tabs */}
+          <div className="border-b border-gray-200">
+            <nav className="-mb-px flex gap-4" aria-label="Tabs">
+              {TABS.map(tab => (
+                <button key={tab} onClick={() => setActiveTab(tab)}
+                  className={`${activeTab === tab ? 'border-blue-500 text-blue-600' : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'}
+                    whitespace-nowrap py-3 px-1 border-b-2 font-medium text-sm transition-colors`}
+                >{tab}</button>
+              ))}
+            </nav>
+          </div>
+
+          {/* Tab Content */}
+          <div className="pt-4 overflow-y-auto" style={{ maxHeight: 'calc(100% - 220px)' }}> {/* Makes content scrollable */}
+            {activeTab === 'Land Use' && (
+              <div className="grid grid-cols-1 gap-6">
+                <div className="space-y-3">
+                  <h4 className="text-xs font-semibold text-gray-500 uppercase flex items-center"><Map size={14} className="mr-2" />Land Use Breakdown</h4>
+                  <LandUseBar value={forest.landUse.forestCover} total={forest.landUse.totalArea} label="Forest Cover" color="bg-green-500" />
+                  <LandUseBar value={forest.landUse.agriculturalLand} total={forest.landUse.totalArea} label="Agricultural Land" color="bg-yellow-500" />
+                  <LandUseBar value={forest.landUse.waterBodies} total={forest.landUse.totalArea} label="Water Bodies" color="bg-blue-500" />
+                  <div className="flex items-center gap-2 pt-2"><Tent size={14} className="text-gray-500" /><p className="text-xs text-gray-600"><span className="font-bold">{forest.landUse.homesteads}</span> Homesteads recorded</p></div>
+                </div>
+                <div className="space-y-3">
+                  <h4 className="text-xs font-semibold text-gray-500 uppercase flex items-center"><Layers size={14} className="mr-2" />Data Layers & Insights</h4>
+                  <p className="text-xs text-gray-600">Classification Model: <span className="font-bold text-gray-800">{forest.dataLayers.classificationModel}</span></p>
+                  <p className="text-xs text-gray-600">Groundwater Level: <span className={`font-bold px-2 py-0.5 rounded-full ${getStatusColor(forest.dataLayers.groundwaterLevel)}`}>{forest.dataLayers.groundwaterLevel}</span></p>
+                  <p className="text-xs text-gray-600">PM Gati Shakti Score: <span className="font-bold text-gray-800">{forest.dataLayers.infrastructureScore}/100</span></p>
                 </div>
               </div>
-            </div>
-            
-            <div className="text-center">
-              <span className={`inline-block px-2 py-1 rounded text-xs font-medium text-white ${getStatusColor(stats.protection.status)}`}>
-                {stats.protection.status}
-              </span>
-            </div>
-            
-            <p className="text-xs text-gray-600 text-center">
-              {stats.protection.protectedAreas} protected areas monitoring forest health and wildlife.
-            </p>
-          </div>
-        </div>
+            )}
 
-        {/* Monitoring & Alerts Card */}
-        <div className="bg-white/95 backdrop-blur-sm rounded-lg p-4 shadow-lg pointer-events-auto border border-white/20">
-          <div className="flex items-center justify-between mb-3">
-            <h3 className="text-sm font-semibold text-gray-700 flex items-center gap-2">
-              <CircleGauge className="h-4 w-4 text-blue-600" />
-              Monitoring & Alerts
-            </h3>
-            <button className="text-xs text-blue-600 hover:text-blue-800">See all</button>
-          </div>
-          
-          <div className="grid grid-cols-2 gap-3">
-            <div className="bg-blue-50 rounded-lg p-3 text-center">
-              <div className="text-lg font-bold text-blue-600">{stats.monitoring.activeSensors}</div>
-              <div className="text-xs text-blue-700">Active Sensors</div>
-            </div>
-            
-            <div className="bg-red-50 rounded-lg p-3 text-center">
-              <div className="text-lg font-bold text-red-600">{stats.alerts.active}</div>
-              <div className="text-xs text-red-700">Active Alerts</div>
-            </div>
-          </div>
-          
-          <div className="mt-3 text-center">
-            <span className={`inline-block px-2 py-1 rounded text-xs font-medium text-white ${getRiskColor(stats.alerts.riskLevel)}`}>
-              {stats.alerts.riskLevel} Risk
-            </span>
-          </div>
-          
-          <p className="text-xs text-gray-600 text-center mt-2">
-            {stats.monitoring.coverage} sensor coverage with {stats.alerts.resolved} resolved incidents.
-          </p>
-        </div>
+            {activeTab === 'FRA & Community' && (
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
+                {/* FRA Details */}
+                <div className="space-y-3">
+                  <h4 className="text-xs font-semibold text-gray-500 uppercase flex items-center">
+                    <UserCheck size={14} className="mr-2" /> FRA Status
+                  </h4>
+                  <p className="text-xs text-gray-600">Coverage: <span className="font-bold">{forest.fra.coverage}</span></p>
+                  <p className="text-xs text-gray-600">Granted Claims: <span className="font-bold">{forest.fra.granted}</span> out of <span className="font-bold">{forest.fra.claims}</span></p>
+                  <p className="text-xs text-gray-600">Current Status: <span className="font-bold">{forest.fra.status}</span></p>
+                </div>
 
-        {/* Conservation & Fire Risk Card */}
-        <div className="bg-white/95 backdrop-blur-sm rounded-lg p-4 shadow-lg pointer-events-auto border border-white/20">
-          <div className="flex items-center justify-between mb-3">
-            <h3 className="text-sm font-semibold text-gray-700 flex items-center gap-2">
-              <Leaf className="h-4 w-4 text-green-600" />
-              Conservation Status
-            </h3>
-            <button className="text-xs text-blue-600 hover:text-blue-800">See all</button>
-          </div>
-          
-          <div className="space-y-3">
-            <div className="flex items-center justify-between">
-              <span className="text-xs text-gray-600">Biodiversity Index</span>
-              <span className="text-sm font-semibold text-gray-600">{stats.conservation.biodiversityIndex}%</span>
-            </div>
-            
-            <div className="flex items-center gap-2">
-              <Flame className="h-4 w-4 text-orange-500" />
-              <span className="text-xs text-gray-600 flex-1">Fire Risk</span>
-              <span className={`px-2 py-1 rounded text-xs font-medium text-white ${getRiskColor(stats.fireRisk.level)}`}>
-                {stats.fireRisk.level}
-              </span>
-            </div>
-            
-            <div className="flex items-center gap-2">
-              <Users className="h-4 w-4 text-blue-500" />
-              <span className="text-xs text-gray-600 flex-1">Visitors</span>
-              <span className="text-sm font-semibold flex items-center gap-1 text-gray-600">
-                {stats.visitors.currentMonth}
-                <span className="text-xs ">{getTrendIcon(stats.visitors.trend)}</span>
-              </span>
-            </div>
-            
-            <p className="text-xs text-gray-600">
-              {stats.conservation.endangeredSpecies} endangered species under protection.
-            </p>
+                {/* Community Details */}
+                <div className="space-y-3">
+                  <h4 className="text-xs font-semibold text-gray-500 uppercase flex items-center">
+                    <Users size={14} className="mr-2" /> Community Insights
+                  </h4>
+                  <p className="text-xs text-gray-600">Households: <span className="font-bold">{forest.community.households}</span></p>
+                  <p className="text-xs text-gray-600">Dependence on Forest: <span className="font-bold">{forest.community.dependence}</span></p>
+                  <p className="text-xs text-gray-600">Population Trend: <span className="font-bold">{forest.community.trend}</span></p>
+                </div>
+              </div>
+            )}
+
+            {activeTab === 'Risk & Conservation' && (
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
+                {/* Risk Details */}
+                <div className="space-y-3">
+                  <h4 className="text-xs font-semibold text-gray-500 uppercase flex items-center">
+                    <AlertTriangle size={14} className="mr-2" /> Risk Assessment
+                  </h4>
+                  <p className="text-xs text-gray-600">Fire Risk Level: <span className="font-bold">{forest.risk.fireLevel}</span></p>
+                  <p className="text-xs text-gray-600">Area Affected by Fire: <span className="font-bold">{forest.risk.firePercentage}%</span></p>
+                  <p className="text-xs text-gray-600">Last Fire Incident: <span className="font-bold">{forest.risk.lastIncident}</span></p>
+                </div>
+
+                {/* Conservation Details */}
+                <div className="space-y-3">
+                  <h4 className="text-xs font-semibold text-gray-500 uppercase flex items-center">
+                    <Leaf size={14} className="mr-2" /> Conservation Status
+                  </h4>
+                  <p className="text-xs text-gray-600">Biodiversity Index: <span className="font-bold">{forest.conservation.biodiversityIndex}</span></p>
+                  <p className="text-xs text-gray-600">Endangered Species Count: <span className="font-bold">{forest.conservation.endangeredSpecies}</span></p>
+                  <p className="text-xs text-gray-600">Conservation Status: <span className="font-bold">{forest.conservation.status}</span></p>
+                </div>
+              </div>
+            )}
+
           </div>
         </div>
       </div>

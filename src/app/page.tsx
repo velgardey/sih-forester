@@ -6,7 +6,7 @@ import { MapView } from '@/components/MapView';
 import { Header } from '@/components/Header';
 
 export default function Dashboard() {
-  const [selectedForest, setSelectedForest] = useState<string | null>(null);
+  const [selectedForest, setSelectedForest] = useState<number | null>(null);
   const [activeView, setActiveView] = useState<'overview' | 'monitoring' | 'alerts' | 'analytics'>('overview');
 
   return (

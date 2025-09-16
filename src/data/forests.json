@@ -1,180 +1,490 @@
-{
-  "forests": [
-    {
-      "id": "yellowstone",
-      "name": "Yellowstone National Forest",
-      "area": "2.2M acres",
-      "health": "excellent",
-      "boundaries": [
-        [44.428, -110.588],
-        [44.658, -110.588],
-        [44.658, -109.988],
-        [44.428, -109.988]
-      ],
-      "stats": {
-        "protection": {
-          "coverage": 87,
-          "protectedAreas": 12,
-          "status": "Protected"
-        },
-        "monitoring": {
-          "activeSensors": 24,
-          "sensorTypes": 4,
-          "coverage": "Full"
-        },
-        "alerts": {
-          "active": 3,
-          "resolved": 15,
-          "riskLevel": "Low"
-        },
-        "conservation": {
-          "biodiversityIndex": 92,
-          "endangeredSpecies": 8,
-          "status": "Thriving"
-        },
-        "fireRisk": {
-          "level": "Medium",
-          "percentage": 35,
-          "lastIncident": "2 months ago"
-        },
-        "visitors": {
-          "annual": "4.1M",
-          "currentMonth": "340K",
-          "trend": "up"
-        }
-      }
+[
+  {
+    "id": 1,
+    "name": "Kaziranga Forest",
+    "coordinates": {
+      "lat": 26.5775,
+      "lng": 93.1711,
+      "boundary": [
+        [26.58, 93.16],
+        [26.59, 93.18],
+        [26.57, 93.19],
+        [26.56, 93.17]
+      ]
     },
-    {
-      "id": "olympic",
-      "name": "Olympic National Forest",
-      "area": "922K acres",
-      "health": "good",
-      "boundaries": [
-        [47.802, -123.604],
-        [47.967, -123.604],
-        [47.967, -123.004],
-        [47.802, -123.004]
-      ],
-      "stats": {
-        "protection": {
-          "coverage": 76,
-          "protectedAreas": 8,
-          "status": "Protected"
-        },
-        "monitoring": {
-          "activeSensors": 18,
-          "sensorTypes": 3,
-          "coverage": "Partial"
-        },
-        "alerts": {
-          "active": 1,
-          "resolved": 12,
-          "riskLevel": "Low"
-        },
-        "conservation": {
-          "biodiversityIndex": 88,
-          "endangeredSpecies": 5,
-          "status": "Stable"
-        },
-        "fireRisk": {
-          "level": "Low",
-          "percentage": 15,
-          "lastIncident": "6 months ago"
-        },
-        "visitors": {
-          "annual": "3.2M",
-          "currentMonth": "280K",
-          "trend": "stable"
-        }
-      }
+    "schemeEligibility": {
+      "pmKisan": true,
+      "jalJeevan": true,
+      "mgnrega": true,
+      "dajgua": false
     },
-    {
-      "id": "sequoia",
-      "name": "Sequoia National Forest",
-      "area": "1.2M acres",
-      "health": "warning",
-      "boundaries": [
-        [36.487, -118.566],
-        [36.652, -118.566],
-        [36.652, -117.966],
-        [36.487, -117.966]
-      ],
-      "stats": {
-        "protection": {
-          "coverage": 64,
-          "protectedAreas": 6,
-          "status": "At Risk"
-        },
-        "monitoring": {
-          "activeSensors": 32,
-          "sensorTypes": 5,
-          "coverage": "Enhanced"
-        },
-        "alerts": {
-          "active": 8,
-          "resolved": 22,
-          "riskLevel": "High"
-        },
-        "conservation": {
-          "biodiversityIndex": 71,
-          "endangeredSpecies": 12,
-          "status": "Declining"
-        },
-        "fireRisk": {
-          "level": "High",
-          "percentage": 78,
-          "lastIncident": "2 weeks ago"
-        },
-        "visitors": {
-          "annual": "1.8M",
-          "currentMonth": "95K",
-          "trend": "down"
-        }
-      }
+    "landUse": {
+      "forestCover": 780,
+      "agriculturalLand": 150,
+      "waterBodies": 40,
+      "homesteads": 620,
+      "totalArea": 980
     },
-    {
-      "id": "redwood",
-      "name": "Redwood National Forest",
-      "area": "139K acres",
-      "health": "excellent",
-      "boundaries": [
-        [41.213, -124.004],
-        [41.378, -124.004],
-        [41.378, -123.404],
-        [41.213, -123.404]
-      ],
-      "stats": {
-        "protection": {
-          "coverage": 94,
-          "protectedAreas": 4,
-          "status": "Protected"
-        },
-        "monitoring": {
-          "activeSensors": 12,
-          "sensorTypes": 3,
-          "coverage": "Full"
-        },
-        "alerts": {
-          "active": 0,
-          "resolved": 8,
-          "riskLevel": "Very Low"
-        },
-        "conservation": {
-          "biodiversityIndex": 96,
-          "endangeredSpecies": 3,
-          "status": "Excellent"
-        },
-        "fireRisk": {
-          "level": "Very Low",
-          "percentage": 8,
-          "lastIncident": "1 year ago"
-        },
-        "visitors": {
-          "annual": "650K",
-          "currentMonth": "45K",
-          "trend": "up"
-        }
-      }
+    "dataLayers": {
+      "classificationModel": "CNN",
+      "groundwaterLevel": "Stable",
+      "infrastructureScore": 75
+    },
+    "fra": {
+      "coverage": "45%",
+      "granted": 320,
+      "claims": 400,
+      "status": "Active"
+    },
+    "conservation": {
+      "biodiversityIndex": 78,
+      "endangeredSpecies": 12,
+      "status": "Stable"
+    },
+    "risk": {
+      "fireLevel": "Medium",
+      "firePercentage": 12,
+      "lastIncident": "2025-03-21"
+    },
+    "community": {
+      "households": 5400,
+      "dependence": "High",
+      "trend": "Increasing"
     }
-  ]
-}
+  },
+  {
+    "id": 2,
+    "name": "Sundarbans Forest",
+    "coordinates": {
+      "lat": 21.9497,
+      "lng": 89.1833,
+      "boundary": [
+        [21.95, 89.18],
+        [21.96, 89.20],
+        [21.94, 89.21],
+        [21.93, 89.19]
+      ]
+    },
+    "schemeEligibility": {
+      "pmKisan": false,
+      "jalJeevan": true,
+      "mgnrega": true,
+      "dajgua": true
+    },
+    "landUse": {
+      "forestCover": 1250,
+      "agriculturalLand": 210,
+      "waterBodies": 95,
+      "homesteads": 1100,
+      "totalArea": 1565
+    },
+    "dataLayers": {
+      "classificationModel": "Random Forest",
+      "groundwaterLevel": "Stable",
+      "infrastructureScore": 55
+    },
+    "fra": {
+      "coverage": "62%",
+      "granted": 510,
+      "claims": 820,
+      "status": "Ongoing"
+    },
+    "conservation": {
+      "biodiversityIndex": 83,
+      "endangeredSpecies": 18,
+      "status": "Critical"
+    },
+    "risk": {
+      "fireLevel": "Low",
+      "firePercentage": 5,
+      "lastIncident": "2024-11-10"
+    },
+    "community": {
+      "households": 9200,
+      "dependence": "Very High",
+      "trend": "Stable"
+    }
+  },
+  {
+    "id": 3,
+    "name": "Gir National Park",
+    "coordinates": {
+      "lat": 21.124,
+      "lng": 70.824,
+      "boundary": [
+        [21.13, 70.82],
+        [21.14, 70.84],
+        [21.12, 70.85],
+        [21.11, 70.83]
+      ]
+    },
+    "schemeEligibility": {
+      "pmKisan": false,
+      "jalJeevan": false,
+      "mgnrega": true,
+      "dajgua": false
+    },
+    "landUse": {
+      "forestCover": 1412,
+      "agriculturalLand": 110,
+      "waterBodies": 22,
+      "homesteads": 450,
+      "totalArea": 1550
+    },
+    "dataLayers": {
+      "classificationModel": "CNN",
+      "groundwaterLevel": "Low",
+      "infrastructureScore": 68
+    },
+    "fra": {
+      "coverage": "37%",
+      "granted": 180,
+      "claims": 240,
+      "status": "Active"
+    },
+    "conservation": {
+      "biodiversityIndex": 72,
+      "endangeredSpecies": 9,
+      "status": "Stable"
+    },
+    "risk": {
+      "fireLevel": "High",
+      "firePercentage": 18,
+      "lastIncident": "2025-02-11"
+    },
+    "community": {
+      "households": 3600,
+      "dependence": "Moderate",
+      "trend": "Decreasing"
+    }
+  },
+  {
+    "id": 4,
+    "name": "Simlipal Forest",
+    "coordinates": {
+      "lat": 21.5933,
+      "lng": 86.3311,
+      "boundary": [
+        [21.60, 86.33],
+        [21.61, 86.35],
+        [21.59, 86.36],
+        [21.58, 86.34]
+      ]
+    },
+    "schemeEligibility": {
+      "pmKisan": true,
+      "jalJeevan": true,
+      "mgnrega": true,
+      "dajgua": true
+    },
+    "landUse": {
+      "forestCover": 845,
+      "agriculturalLand": 175,
+      "waterBodies": 30,
+      "homesteads": 550,
+      "totalArea": 1050
+    },
+    "dataLayers": {
+      "classificationModel": "Random Forest",
+      "groundwaterLevel": "Stable",
+      "infrastructureScore": 45
+    },
+    "fra": {
+      "coverage": "54%",
+      "granted": 270,
+      "claims": 500,
+      "status": "Ongoing"
+    },
+    "conservation": {
+      "biodiversityIndex": 76,
+      "endangeredSpecies": 11,
+      "status": "At Risk"
+    },
+    "risk": {
+      "fireLevel": "Medium",
+      "firePercentage": 10,
+      "lastIncident": "2025-01-15"
+    },
+    "community": {
+      "households": 4800,
+      "dependence": "High",
+      "trend": "Increasing"
+    }
+  },
+  {
+    "id": 5,
+    "name": "Periyar Tiger Reserve",
+    "coordinates": {
+      "lat": 9.4669,
+      "lng": 77.2364,
+      "boundary": [
+        [9.47, 77.23],
+        [9.48, 77.25],
+        [9.46, 77.26],
+        [9.45, 77.24]
+      ]
+    },
+    "schemeEligibility": {
+      "pmKisan": false,
+      "jalJeevan": true,
+      "mgnrega": false,
+      "dajgua": false
+    },
+    "landUse": {
+      "forestCover": 925,
+      "agriculturalLand": 95,
+      "waterBodies": 55,
+      "homesteads": 300,
+      "totalArea": 1080
+    },
+    "dataLayers": {
+      "classificationModel": "CNN",
+      "groundwaterLevel": "Stable",
+      "infrastructureScore": 82
+    },
+    "fra": {
+      "coverage": "41%",
+      "granted": 190,
+      "claims": 310,
+      "status": "Active"
+    },
+    "conservation": {
+      "biodiversityIndex": 81,
+      "endangeredSpecies": 15,
+      "status": "Stable"
+    },
+    "risk": {
+      "fireLevel": "Low",
+      "firePercentage": 7,
+      "lastIncident": "2024-12-28"
+    },
+    "community": {
+      "households": 3100,
+      "dependence": "Moderate",
+      "trend": "Stable"
+    }
+  },
+  {
+    "id": 6,
+    "name": "Kanha National Park",
+    "coordinates": {
+      "lat": 22.3367,
+      "lng": 80.6124,
+      "boundary": [
+        [22.34, 80.61],
+        [22.355, 80.62],
+        [22.36, 80.635],
+        [22.35, 80.64],
+        [22.33, 80.63],
+        [22.32, 80.625],
+        [22.33, 80.60]
+      ]
+    },
+    "schemeEligibility": {
+      "pmKisan": false,
+      "jalJeevan": true,
+      "mgnrega": true,
+      "dajgua": false
+    },
+    "landUse": {
+      "forestCover": 940,
+      "agriculturalLand": 50,
+      "waterBodies": 30,
+      "homesteads": 125,
+      "totalArea": 1020
+    },
+    "dataLayers": {
+      "classificationModel": "Random Forest",
+      "groundwaterLevel": "Stable",
+      "infrastructureScore": 65
+    },
+    "fra": {
+      "coverage": "80%",
+      "granted": 1500,
+      "claims": 1800,
+      "status": "Active"
+    },
+    "conservation": {
+      "biodiversityIndex": 85,
+      "endangeredSpecies": 25,
+      "status": "Stable"
+    },
+    "risk": {
+      "fireLevel": "Low",
+      "firePercentage": 3,
+      "lastIncident": "2024-10-15"
+    },
+    "community": {
+      "households": 1200,
+      "dependence": "Low",
+      "trend": "Stable"
+    }
+  },
+  {
+    "id": 7,
+    "name": "Sepahijala Wildlife Sanctuary",
+    "coordinates": {
+      "lat": 23.716,
+      "lng": 91.3069,
+      "boundary": [
+        [23.72, 91.30],
+        [23.73, 91.31],
+        [23.725, 91.32],
+        [23.71, 91.325],
+        [23.70, 91.31],
+        [23.705, 91.30],
+        [23.71, 91.29]
+      ]
+    },
+    "schemeEligibility": {
+      "pmKisan": true,
+      "jalJeevan": false,
+      "mgnrega": true,
+      "dajgua": false
+    },
+    "landUse": {
+      "forestCover": 185,
+      "agriculturalLand": 20,
+      "waterBodies": 10,
+      "homesteads": 90,
+      "totalArea": 225
+    },
+    "dataLayers": {
+      "classificationModel": "CNN",
+      "groundwaterLevel": "Low",
+      "infrastructureScore": 58
+    },
+    "fra": {
+      "coverage": "65%",
+      "granted": 450,
+      "claims": 600,
+      "status": "Ongoing"
+    },
+    "conservation": {
+      "biodiversityIndex": 70,
+      "endangeredSpecies": 10,
+      "status": "Stable"
+    },
+    "risk": {
+      "fireLevel": "Medium",
+      "firePercentage": 8,
+      "lastIncident": "2025-01-20"
+    },
+    "community": {
+      "households": 800,
+      "dependence": "Moderate",
+      "trend": "Increasing"
+    }
+  },
+  {
+    "id": 8,
+    "name": "Simplipal National Park",
+    "coordinates": {
+      "lat": 21.9333,
+      "lng": 86.3833,
+      "boundary": [
+        [21.94, 86.38],
+        [21.95, 86.40],
+        [21.93, 86.42],
+        [21.91, 86.41],
+        [21.90, 86.39],
+        [21.92, 86.37]
+      ]
+    },
+    "schemeEligibility": {
+      "pmKisan": false,
+      "jalJeevan": true,
+      "mgnrega": true,
+      "dajgua": true
+    },
+    "landUse": {
+      "forestCover": 2750,
+      "agriculturalLand": 100,
+      "waterBodies": 80,
+      "homesteads": 350,
+      "totalArea": 2940
+    },
+    "dataLayers": {
+      "classificationModel": "Random Forest",
+      "groundwaterLevel": "Stable",
+      "infrastructureScore": 40
+    },
+    "fra": {
+      "coverage": "75%",
+      "granted": 1200,
+      "claims": 1500,
+      "status": "Active"
+    },
+    "conservation": {
+      "biodiversityIndex": 90,
+      "endangeredSpecies": 30,
+      "status": "At Risk"
+    },
+    "risk": {
+      "fireLevel": "High",
+      "firePercentage": 15,
+      "lastIncident": "2025-03-10"
+    },
+    "community": {
+      "households": 2500,
+      "dependence": "High",
+      "trend": "Stable"
+    }
+  },
+  {
+    "id": 9,
+    "name": "Kawal Tiger Reserve",
+    "coordinates": {
+      "lat": 19.11,
+      "lng": 78.88,
+      "boundary": [
+        [19.12, 78.88],
+        [19.13, 78.90],
+        [19.115, 78.915],
+        [19.10, 78.91],
+        [19.09, 78.89],
+        [19.10, 78.875],
+        [19.11, 78.87]
+      ]
+    },
+    "schemeEligibility": {
+      "pmKisan": true,
+      "jalJeevan": true,
+      "mgnrega": true,
+      "dajgua": false
+    },
+    "landUse": {
+      "forestCover": 893,
+      "agriculturalLand": 40,
+      "waterBodies": 25,
+      "homesteads": 180,
+      "totalArea": 960
+    },
+    "dataLayers": {
+      "classificationModel": "CNN",
+      "groundwaterLevel": "Low",
+      "infrastructureScore": 52
+    },
+    "fra": {
+      "coverage": "70%",
+      "granted": 800,
+      "claims": 1000,
+      "status": "Ongoing"
+    },
+    "conservation": {
+      "biodiversityIndex": 75,
+      "endangeredSpecies": 15,
+      "status": "Stable"
+    },
+    "risk": {
+      "fireLevel": "Medium",
+      "firePercentage": 9,
+      "lastIncident": "2025-02-05"
+    },
+    "community": {
+      "households": 1500,
+      "dependence": "Moderate",
+      "trend": "Increasing"
+    }
+  }
+]

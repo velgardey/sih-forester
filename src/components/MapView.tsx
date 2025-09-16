@@ -17,7 +17,7 @@ const DynamicMap = dynamic(() => import('./InteractiveMap'), {
 });
 
 interface MapViewProps {
-  selectedForest: string | null;
+  selectedForest: number | null;
   activeView: 'overview' | 'monitoring' | 'alerts' | 'analytics';
 }
 
