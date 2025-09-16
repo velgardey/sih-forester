@@ -1,0 +1,25 @@
+{
+  "navItems": [
+    {
+      "id": "overview",
+      "label": "Overview",
+      "icon": "Trees"
+    },
+    {
+      "id": "monitoring",
+      "label": "Monitoring",
+      "icon": "Search"
+    },
+    {
+      "id": "alerts",
+      "label": "Alerts",
+      "icon": "Bell"
+    },
+    {
+      "id": "analytics",
+      "label": "Analytics",
+      "icon": "Settings"
+    }
+  ]
+}
+

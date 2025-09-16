@@ -1,0 +1,109 @@
+{
+  "stats": {
+    "overview": [
+      {
+        "label": "Total Coverage",
+        "value": "4.5M acres",
+        "icon": "TreePine",
+        "color": "green"
+      },
+      {
+        "label": "Active Monitoring",
+        "value": "342 sensors",
+        "icon": "Activity",
+        "color": "blue"
+      },
+      {
+        "label": "Alerts",
+        "value": "12 active",
+        "icon": "AlertTriangle",
+        "color": "red"
+      },
+      {
+        "label": "Health Score",
+        "value": "92%",
+        "icon": "TrendingUp",
+        "color": "green"
+      }
+    ],
+    "monitoring": [
+      {
+        "label": "Temperature",
+        "value": "22°C",
+        "icon": "Activity",
+        "color": "blue"
+      },
+      {
+        "label": "Humidity",
+        "value": "68%",
+        "icon": "Activity",
+        "color": "green"
+      },
+      {
+        "label": "Air Quality",
+        "value": "Good",
+        "icon": "Activity",
+        "color": "green"
+      },
+      {
+        "label": "Wind Speed",
+        "value": "12 km/h",
+        "icon": "Activity",
+        "color": "blue"
+      }
+    ],
+    "alerts": [
+      {
+        "label": "Fire Risk",
+        "value": "Medium",
+        "icon": "AlertTriangle",
+        "color": "orange"
+      },
+      {
+        "label": "Deforestation",
+        "value": "3 areas",
+        "icon": "AlertTriangle",
+        "color": "red"
+      },
+      {
+        "label": "Pest Activity",
+        "value": "Low",
+        "icon": "AlertTriangle",
+        "color": "green"
+      },
+      {
+        "label": "Equipment",
+        "value": "2 offline",
+        "icon": "AlertTriangle",
+        "color": "red"
+      }
+    ],
+    "analytics": [
+      {
+        "label": "Growth Rate",
+        "value": "+2.3%",
+        "icon": "TrendingUp",
+        "color": "green"
+      },
+      {
+        "label": "Biodiversity",
+        "value": "847 species",
+        "icon": "TrendingUp",
+        "color": "blue"
+      },
+      {
+        "label": "Carbon Capture",
+        "value": "12.5K tons",
+        "icon": "TrendingUp",
+        "color": "green"
+      },
+      {
+        "label": "Water Usage",
+        "value": "95% efficient",
+        "icon": "TrendingUp",
+        "color": "blue"
+      }
+    ]
+  }
+}
+

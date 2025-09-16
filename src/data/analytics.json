@@ -1,0 +1,43 @@
+{
+  "analyticsZones": [
+    {
+      "id": "high_growth_zone",
+      "name": "High Growth Zone",
+      "center": [44.5, -110.3],
+      "radius": 5000,
+      "color": "#10b981",
+      "fillOpacity": 0.3,
+      "metrics": {
+        "growthRate": "+3.2%",
+        "description": "High growth rate zone"
+      }
+    },
+    {
+      "id": "monitoring_zone",
+      "name": "Monitoring Zone",
+      "center": [47.85, -123.3],
+      "radius": 8000,
+      "color": "#f59e0b",
+      "fillOpacity": 0.3,
+      "metrics": {
+        "status": "Requires attention",
+        "description": "Zone requiring special monitoring"
+      }
+    }
+  ],
+  "analyticsMetrics": [
+    {
+      "name": "Growth Rate Analysis",
+      "description": "Forest growth patterns and trends"
+    },
+    {
+      "name": "Biodiversity Mapping",
+      "description": "Species distribution and ecosystem health"
+    },
+    {
+      "name": "Carbon Sequestration",
+      "description": "Carbon capture efficiency zones"
+    }
+  ]
+}
+

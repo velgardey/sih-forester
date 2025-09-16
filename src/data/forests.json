@@ -1,0 +1,53 @@
+{
+  "forests": [
+    {
+      "id": "yellowstone",
+      "name": "Yellowstone National Forest",
+      "area": "2.2M acres",
+      "health": "excellent",
+      "boundaries": [
+        [44.428, -110.588],
+        [44.658, -110.588],
+        [44.658, -109.988],
+        [44.428, -109.988]
+      ]
+    },
+    {
+      "id": "olympic",
+      "name": "Olympic National Forest",
+      "area": "922K acres",
+      "health": "good",
+      "boundaries": [
+        [47.802, -123.604],
+        [47.967, -123.604],
+        [47.967, -123.004],
+        [47.802, -123.004]
+      ]
+    },
+    {
+      "id": "sequoia",
+      "name": "Sequoia National Forest",
+      "area": "1.2M acres",
+      "health": "warning",
+      "boundaries": [
+        [36.487, -118.566],
+        [36.652, -118.566],
+        [36.652, -117.966],
+        [36.487, -117.966]
+      ]
+    },
+    {
+      "id": "redwood",
+      "name": "Redwood National Forest",
+      "area": "139K acres",
+      "health": "excellent",
+      "boundaries": [
+        [41.213, -124.004],
+        [41.378, -124.004],
+        [41.378, -123.404],
+        [41.213, -123.404]
+      ]
+    }
+  ]
+}
+

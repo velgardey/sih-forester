@@ -1,0 +1,77 @@
+{
+  "alerts": [
+    {
+      "id": 1,
+      "lat": 44.52,
+      "lng": -110.38,
+      "type": "fire_risk",
+      "level": "medium",
+      "message": "Elevated fire risk due to dry conditions",
+      "timestamp": "2h ago",
+      "location": "Yellowstone Sector 7"
+    },
+    {
+      "id": 2,
+      "lat": 47.85,
+      "lng": -123.3,
+      "type": "deforestation",
+      "level": "high",
+      "message": "Unauthorized clearing detected",
+      "timestamp": "1d ago",
+      "location": "Sequoia Zone B"
+    },
+    {
+      "id": 3,
+      "lat": 36.55,
+      "lng": -118.2,
+      "type": "pest",
+      "level": "low",
+      "message": "Bark beetle activity reported",
+      "timestamp": "4h ago",
+      "location": "Olympic Station 3"
+    }
+  ],
+  "alertTypes": [
+    {
+      "type": "fire_risk",
+      "name": "Fire Risk",
+      "icon": "AlertTriangle"
+    },
+    {
+      "type": "deforestation",
+      "name": "Deforestation",
+      "icon": "AlertTriangle"
+    },
+    {
+      "type": "pest",
+      "name": "Pest Activity",
+      "icon": "AlertTriangle"
+    },
+    {
+      "type": "equipment",
+      "name": "Equipment",
+      "icon": "AlertTriangle"
+    }
+  ],
+  "activeAlerts": [
+    {
+      "type": "Fire Risk",
+      "level": "Medium",
+      "location": "Yellowstone Sector 7",
+      "time": "2h ago"
+    },
+    {
+      "type": "Equipment",
+      "level": "High",
+      "location": "Olympic Station 3",
+      "time": "4h ago"
+    },
+    {
+      "type": "Deforestation",
+      "level": "High",
+      "location": "Sequoia Zone B",
+      "time": "1d ago"
+    }
+  ]
+}
+

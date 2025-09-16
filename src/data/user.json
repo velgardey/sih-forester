@@ -1,0 +1,22 @@
+{
+  "user": {
+    "name": "Forest Ranger",
+    "role": "Forest Ranger",
+    "avatar": {
+      "type": "icon",
+      "icon": "User",
+      "bgColor": "bg-green-600",
+      "textColor": "text-white"
+    }
+  },
+  "app": {
+    "name": "Forester",
+    "description": "Forest Management Portal",
+    "logo": {
+      "icon": "Trees",
+      "bgColor": "bg-green-600",
+      "textColor": "text-white"
+    }
+  }
+}
+
