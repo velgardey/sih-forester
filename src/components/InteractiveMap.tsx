@@ -6,6 +6,12 @@ import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import { MapPin, Thermometer, Droplets, Wind, AlertTriangle } from 'lucide-react';
 
+// Import JSON data
+import forestsData from '@/data/forests.json';
+import sensorsData from '@/data/sensors.json';
+import alertsData from '@/data/alerts.json';
+import analyticsData from '@/data/analytics.json';
+
 // Fix for default markers in Next.js
 delete (L.Icon.Default.prototype as any)._getIconUrl;
 L.Icon.Default.mergeOptions({
@@ -19,48 +25,16 @@ interface InteractiveMapProps {
   activeView: 'overview' | 'monitoring' | 'alerts' | 'analytics';
 }
 
-// Forest boundary data (example coordinates)
-const forestBoundaries = {
-  yellowstone: [
-    [44.428, -110.588],
-    [44.658, -110.588],
-    [44.658, -109.988],
-    [44.428, -109.988],
-  ],
-  olympic: [
-    [47.802, -123.604],
-    [47.967, -123.604],
-    [47.967, -123.004],
-    [47.802, -123.004],
-  ],
-  sequoia: [
-    [36.487, -118.566],
-    [36.652, -118.566],
-    [36.652, -117.966],
-    [36.487, -117.966],
-  ],
-  redwood: [
-    [41.213, -124.004],
-    [41.378, -124.004],
-    [41.378, -123.404],
-    [41.213, -123.404],
-  ],
-};
+// Extract forest boundaries from JSON data
+const forestBoundaries = forestsData.forests.reduce((acc, forest) => {
+  acc[forest.id] = forest.boundaries;
+  return acc;
+}, {} as Record<string, number[][]>);
 
-// Sensor data for monitoring
-const sensors = [
-  { id: 1, lat: 44.5, lng: -110.3, type: 'temperature', value: '22°C', status: 'normal' },
-  { id: 2, lat: 44.6, lng: -110.4, type: 'humidity', value: '68%', status: 'normal' },
-  { id: 3, lat: 44.45, lng: -110.35, type: 'air_quality', value: 'Good', status: 'normal' },
-  { id: 4, lat: 44.55, lng: -110.45, type: 'wind', value: '12 km/h', status: 'normal' },
-];
-
-// Alert data
-const alerts = [
-  { id: 1, lat: 44.52, lng: -110.38, type: 'fire_risk', level: 'medium', message: 'Elevated fire risk due to dry conditions' },
-  { id: 2, lat: 47.85, lng: -123.3, type: 'deforestation', level: 'high', message: 'Unauthorized clearing detected' },
-  { id: 3, lat: 36.55, lng: -118.2, type: 'pest', level: 'low', message: 'Bark beetle activity reported' },
-];
+// Use imported data
+const sensors = sensorsData.sensors;
+const alerts = alertsData.alerts;
+const analyticsZones = analyticsData.analyticsZones;
 
 // Custom icons for different marker types
 const createCustomIcon = (type: string, status?: string) => {
@@ -192,15 +166,15 @@ export default function InteractiveMap({ selectedForest, activeView }: Interacti
               <div className="flex items-center space-x-2 mb-2">
                 <AlertTriangle className="h-4 w-4 text-red-500" />
                 <h3 className="font-semibold capitalize">{alert.type.replace('_', ' ')} Alert</h3>
-              key={zone.id}
-              center={zone.center as L.LatLngExpression}
+              </div>
+              <div className="space-y-2">
                 <div className="flex items-center space-x-2">
-              pathOptions={{ color: zone.color, fillOpacity: zone.fillOpacity }}
+                  <span className="text-sm font-medium">Level:</span>
                   <span
                     className="px-2 py-1 rounded text-xs font-medium text-white"
                     style={{ backgroundColor: getAlertColor(alert.level) }}
                   >
-                  <p className="text-sm">{zone.metrics.description}</p>
+                    {alert.level.toUpperCase()}
                   </span>
                 </div>
                 <p className="text-sm text-gray-700">{alert.message}</p>
@@ -216,30 +190,21 @@ export default function InteractiveMap({ selectedForest, activeView }: Interacti
       {/* Analytics view - heat maps and zones */}
       {activeView === 'analytics' && (
         <>
-          <Circle
-            center={[44.5, -110.3]}
-            radius={5000}
-            pathOptions={{ color: '#10b981', fillOpacity: 0.3 }}
-          >
-            <Popup>
-              <div className="p-2">
-                <h3 className="font-semibold">High Growth Zone</h3>
-                <p className="text-sm">+3.2% growth rate</p>
-              </div>
-            </Popup>
-          </Circle>
-          <Circle
-            center={[47.85, -123.3]}
-            radius={8000}
-            pathOptions={{ color: '#f59e0b', fillOpacity: 0.3 }}
-          >
-            <Popup>
-              <div className="p-2">
-                <h3 className="font-semibold">Monitoring Zone</h3>
-                <p className="text-sm">Requires attention</p>
-              </div>
-            </Popup>
-          </Circle>
+          {analyticsZones.map((zone) => (
+            <Circle
+              key={zone.id}
+              center={zone.center as L.LatLngExpression}
+              radius={zone.radius}
+              pathOptions={{ color: zone.color, fillOpacity: zone.fillOpacity }}
+            >
+              <Popup>
+                <div className="p-2">
+                  <h3 className="font-semibold">{zone.name}</h3>
+                  <p className="text-sm">{zone.metrics.description}</p>
+                </div>
+              </Popup>
+            </Circle>
+          ))}
         </>
       )}
     </MapContainer>

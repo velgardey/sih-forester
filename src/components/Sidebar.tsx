@@ -10,10 +10,9 @@ import forestsData from '@/data/forests.json';
 interface SidebarProps {
   selectedForest: string | null;
   setSelectedForest: (forest: string | null) => void;
-  activeView: 'overview' | 'monitoring' | 'alerts' | 'analytics';
 }
 
-export function Sidebar({ selectedForest, setSelectedForest, activeView }: SidebarProps) {
+export function Sidebar({ selectedForest, setSelectedForest }: SidebarProps) {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   
   const forests = forestsData.forests;

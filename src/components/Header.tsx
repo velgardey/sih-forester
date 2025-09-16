@@ -51,7 +51,7 @@ export function Header({ activeView, setActiveView }: HeaderProps) {
             return (
               <button
                 key={item.id}
-                onClick={() => setActiveView(item.id as any)}
+                onClick={() => setActiveView(item.id as 'overview' | 'monitoring' | 'alerts' | 'analytics')}
                 className={clsx(
                   'flex items-center space-x-2 px-3 py-2 rounded-md text-sm font-medium transition-colors',
                   activeView === item.id

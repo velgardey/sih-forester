@@ -17,7 +17,6 @@ export default function Dashboard() {
         <Sidebar
           selectedForest={selectedForest}
           setSelectedForest={setSelectedForest}
-          activeView={activeView}
         />
 
         <main className="flex-1 relative">
