@@ -10,7 +10,39 @@
         [44.658, -110.588],
         [44.658, -109.988],
         [44.428, -109.988]
-      ]
+      ],
+      "stats": {
+        "protection": {
+          "coverage": 87,
+          "protectedAreas": 12,
+          "status": "Protected"
+        },
+        "monitoring": {
+          "activeSensors": 24,
+          "sensorTypes": 4,
+          "coverage": "Full"
+        },
+        "alerts": {
+          "active": 3,
+          "resolved": 15,
+          "riskLevel": "Low"
+        },
+        "conservation": {
+          "biodiversityIndex": 92,
+          "endangeredSpecies": 8,
+          "status": "Thriving"
+        },
+        "fireRisk": {
+          "level": "Medium",
+          "percentage": 35,
+          "lastIncident": "2 months ago"
+        },
+        "visitors": {
+          "annual": "4.1M",
+          "currentMonth": "340K",
+          "trend": "up"
+        }
+      }
     },
     {
       "id": "olympic",
@@ -22,7 +54,39 @@
         [47.967, -123.604],
         [47.967, -123.004],
         [47.802, -123.004]
-      ]
+      ],
+      "stats": {
+        "protection": {
+          "coverage": 76,
+          "protectedAreas": 8,
+          "status": "Protected"
+        },
+        "monitoring": {
+          "activeSensors": 18,
+          "sensorTypes": 3,
+          "coverage": "Partial"
+        },
+        "alerts": {
+          "active": 1,
+          "resolved": 12,
+          "riskLevel": "Low"
+        },
+        "conservation": {
+          "biodiversityIndex": 88,
+          "endangeredSpecies": 5,
+          "status": "Stable"
+        },
+        "fireRisk": {
+          "level": "Low",
+          "percentage": 15,
+          "lastIncident": "6 months ago"
+        },
+        "visitors": {
+          "annual": "3.2M",
+          "currentMonth": "280K",
+          "trend": "stable"
+        }
+      }
     },
     {
       "id": "sequoia",
@@ -34,7 +98,39 @@
         [36.652, -118.566],
         [36.652, -117.966],
         [36.487, -117.966]
-      ]
+      ],
+      "stats": {
+        "protection": {
+          "coverage": 64,
+          "protectedAreas": 6,
+          "status": "At Risk"
+        },
+        "monitoring": {
+          "activeSensors": 32,
+          "sensorTypes": 5,
+          "coverage": "Enhanced"
+        },
+        "alerts": {
+          "active": 8,
+          "resolved": 22,
+          "riskLevel": "High"
+        },
+        "conservation": {
+          "biodiversityIndex": 71,
+          "endangeredSpecies": 12,
+          "status": "Declining"
+        },
+        "fireRisk": {
+          "level": "High",
+          "percentage": 78,
+          "lastIncident": "2 weeks ago"
+        },
+        "visitors": {
+          "annual": "1.8M",
+          "currentMonth": "95K",
+          "trend": "down"
+        }
+      }
     },
     {
       "id": "redwood",
@@ -46,8 +142,39 @@
         [41.378, -124.004],
         [41.378, -123.404],
         [41.213, -123.404]
-      ]
+      ],
+      "stats": {
+        "protection": {
+          "coverage": 94,
+          "protectedAreas": 4,
+          "status": "Protected"
+        },
+        "monitoring": {
+          "activeSensors": 12,
+          "sensorTypes": 3,
+          "coverage": "Full"
+        },
+        "alerts": {
+          "active": 0,
+          "resolved": 8,
+          "riskLevel": "Very Low"
+        },
+        "conservation": {
+          "biodiversityIndex": 96,
+          "endangeredSpecies": 3,
+          "status": "Excellent"
+        },
+        "fireRisk": {
+          "level": "Very Low",
+          "percentage": 8,
+          "lastIncident": "1 year ago"
+        },
+        "visitors": {
+          "annual": "650K",
+          "currentMonth": "45K",
+          "trend": "up"
+        }
+      }
     }
   ]
 }
-
