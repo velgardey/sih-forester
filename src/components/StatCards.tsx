@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import {
   Shield, Leaf, Flame, Users, Map, CheckCircle2, XCircle,
   Layers, Handshake, Droplet, Tent, ChevronRight, X,
@@ -61,6 +61,21 @@ interface StatCardProps {
 export default function ForestDashboardSidebar({ forest, onClose }: StatCardProps) {
   const [activeTab, setActiveTab] = useState('Land Use');
   const [isCollapsed, setIsCollapsed] = useState(false);
+  const wrapperRef  = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (wrapperRef.current && !wrapperRef.current.contains(event.target as Node)) {
+        setIsCollapsed(true);
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [onClose]);
+
 
   // Helper components and functions remain the same
   const getStatusColor = (status: string) => {
@@ -105,8 +120,8 @@ export default function ForestDashboardSidebar({ forest, onClose }: StatCardProp
   const TABS = ['Land Use', 'FRA & Community', 'Risk & Conservation'];
 
   return (
-    <div className={`absolute top-4 left-4 bottom-4 z-[1999] pointer-events-auto transition-all duration-300 ease-in-out ${isCollapsed ? 'w-16' : 'w-[450px]'}`}>
-      <div className="relative h-full bg-white/95 rounded-xl shadow-2xl border border-gray-200 flex flex-col overflow-hidden">
+    <div ref={wrapperRef} className={`absolute top-4 left-4 bottom-4 z-[1999] pointer-events-auto transition-all duration-300 ease-in-out ${isCollapsed ? 'w-16' : 'w-[450px]'}`}>
+      <div onClick={() => setIsCollapsed(!isCollapsed)} className="relative h-full bg-white/95 rounded-xl shadow-2xl border border-gray-200 flex flex-col overflow-hidden">
 
         {/* --- TOGGLE BUTTON --- */}
         <button
@@ -118,7 +133,13 @@ export default function ForestDashboardSidebar({ forest, onClose }: StatCardProp
         </button>
 
         {/* --- COLLAPSED VIEW --- */}
-        <div className={`transition-opacity duration-300 ease-in-out ${isCollapsed ? 'opacity-100' : 'opacity-0'}`}>
+        <div  className={`transition-opacity flex flex-col w-fit justify-center items-center duration-300 ease-in-out ${isCollapsed ? 'opacity-100' : 'opacity-0'}`}>
+          <button
+            onClick={() => setIsCollapsed(false)}
+            className="mt-4 p-2  text-slate-400 hover:bg-slate-400 hover:text-white rounded-4xl transition-colors"
+          >
+            <ChevronRight className={`h-5 w-5 transition-transform duration-300 ${isCollapsed ? 'rotate-0' : 'rotate-180'}`} />
+          </button>
           <h3 className="text-gray-700 font-semibold [writing-mode:vertical-rl] rotate-180 p-4 whitespace-nowrap">
             {forest.name}
           </h3>
