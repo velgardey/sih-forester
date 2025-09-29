@@ -3,22 +3,26 @@
     {
       "id": "overview",
       "label": "Overview",
-      "icon": "Trees"
+      "icon": "Trees",
+      "href":"/"
     },
     {
       "id": "monitoring",
       "label": "Monitoring",
-      "icon": "Search"
+      "icon": "Search",
+      "href":"/monitoring"
     },
     {
       "id": "alerts",
       "label": "Alerts",
-      "icon": "Bell"
+      "icon": "Bell",
+      "href":"/alerts"
     },
     {
       "id": "analytics",
       "label": "Analytics",
-      "icon": "Settings"
+      "icon": "Settings",
+      "href":"/analytics"
     }
   ]
 }
