@@ -6,7 +6,7 @@ import { clsx } from 'clsx';
 // Import JSON data
 import navigationData from '@/data/navigation.json';
 import userData from '@/data/user.json';
-import { useRouter, usePathname } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 
 interface HeaderProps {
   activeView: 'overview' | 'monitoring' | 'alerts' | 'analytics';
@@ -16,7 +16,6 @@ interface HeaderProps {
 export function Header({ activeView, setActiveView }: HeaderProps) {
   const navItems = navigationData.navItems;
   const router = useRouter();
-  const pathname = usePathname();
 
   const getIcon = (iconName: string) => {
     switch (iconName) {
@@ -42,7 +41,10 @@ export function Header({ activeView, setActiveView }: HeaderProps) {
     <header className="bg-white border-b border-gray-200 px-6 py-4 shadow-sm">
       <div className="flex items-center justify-between">
         {/* Logo and Title */}
-        <div className="flex items-center space-x-3">
+        <div
+          onClick={() => handleNav('overview', '/')}
+          className="flex items-center space-x-3 cursor-pointer hover:bg-gray-100 p-2 rounded-lg transition-colors"
+        >
           <div className={`${userData.app.logo.bgColor} p-2 rounded-lg`}>
             <Trees className={`h-6 w-6 ${userData.app.logo.textColor}`} />
           </div>
@@ -51,7 +53,6 @@ export function Header({ activeView, setActiveView }: HeaderProps) {
             <p className="text-sm text-gray-500">{userData.app.description}</p>
           </div>
         </div>
-
         {/* Navigation */}
         <nav className="flex space-x-8">
           {navItems.map((item) => {

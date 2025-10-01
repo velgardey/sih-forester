@@ -4,25 +4,25 @@
       "id": "overview",
       "label": "Overview",
       "icon": "Trees",
-      "href":"/"
+      "href":"/dashboard"
     },
     {
       "id": "monitoring",
       "label": "Monitoring",
       "icon": "Search",
-      "href":"/monitoring"
+      "href":"/dashboard/monitoring"
     },
     {
       "id": "alerts",
       "label": "Alerts",
       "icon": "Bell",
-      "href":"/alerts"
+      "href":"/dashboard/alerts"
     },
     {
       "id": "analytics",
       "label": "Analytics",
       "icon": "Settings",
-      "href":"/analytics"
+      "href":"/dashboard/analytics"
     }
   ]
 }
