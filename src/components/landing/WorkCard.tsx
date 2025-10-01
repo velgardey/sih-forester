@@ -1,17 +1,53 @@
-const WorkCard = ({ illustration, title, description, borderColor } : any) => {
+import React from 'react';
+
+interface WorkCardProps {
+  illustration: React.ReactNode;
+  title: string;
+  description: string;
+  borderColor?: string;
+}
+
+const highlightWords = [
+  'legacy',
+  'document',
+  'AI',
+  'powered',
+  'DOC',
+  'FRA',
+  'Atlas',
+  'government',
+  'schemes',
+];
+
+export const WorkCard: React.FC<WorkCardProps> = ({
+  illustration,
+  title,
+  description,
+  borderColor = 'border-transparent',
+}) => {
   return (
-    <div className={`bg-white rounded-xl shadow-lg p-6 text-center w-full max-w-sm transform hover:scale-105 transition-transform duration-300 border-2 ${borderColor}`}>
-        <div className="flex justify-center items-center h-40 mb-4">
-            {illustration}
-        </div>
+    <div
+      className={`bg-white rounded-xl shadow-lg p-6 text-center w-full max-w-sm transform hover:scale-105 transition-transform duration-300 border-2 ${borderColor}`}
+    >
+      {/* Illustration */}
+      <div className="flex justify-center items-center h-40 mb-4">{illustration}</div>
+
+      {/* Title */}
+      <h3 className="text-xl font-semibold text-gray-800 mb-2">{title}</h3>
+
       <p className="text-gray-600 leading-relaxed">
-        {description.split(' ').map((word: any, index: any) => {
-            if(['legacy', 'document', 'AI', 'powered', 'DOC', 'FRA', 'Atlas', 'government', 'schemes'].includes(word)){
-                return <strong key={index} className="text-gray-800">{word} </strong>
-            }
-            return word + ' ';
+        {description.split(' ').map((word, index) => {
+          const cleanWord = word.replace(/[.,]/g, '');
+          if (highlightWords.includes(cleanWord)) {
+            return (
+              <strong key={index} className="text-gray-800">
+                {word}{' '}
+              </strong>
+            );
+          }
+          return word + ' ';
         })}
-        </p>
+      </p>
     </div>
   );
 };

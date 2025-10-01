@@ -38,7 +38,7 @@ export function Header({ activeView, setActiveView }: HeaderProps) {
   };  
 
   return (
-    <header className="bg-white border-b border-gray-200 px-6 py-4 shadow-sm">
+    <header className="bg-white border-b border-gray-200 px-6 shadow-sm">
       <div className="flex items-center justify-between">
         {/* Logo and Title */}
         <div

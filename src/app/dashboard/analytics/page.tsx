@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import { Sidebar } from '@/components/Sidebar';
 import { MapView } from '@/components/MapView';
 import { Header } from '@/components/Header';
 
