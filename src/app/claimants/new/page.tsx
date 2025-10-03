@@ -2,7 +2,6 @@
 
 import { useForm } from "react-hook-form";
 import api from "@/lib/api";
-import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 type ContactInfo = {
@@ -25,14 +24,12 @@ contact_info? : ContactInfo;
 export default function NewUserPage() {
   const { register, handleSubmit } = useForm<UserForm>();
   const [loading, setLoading] = useState(false);
-  const router = useRouter();
 
   const onSubmit = async (data: UserForm) => {
     try {
       setLoading(true);
       const res = await api.post("/users/", data);
       const userId = res.data.user_id;
-      router.push(`/claims/new?user_id=${userId}`);
     } catch (err) {
       console.error(err);
       alert("Error creating user");
