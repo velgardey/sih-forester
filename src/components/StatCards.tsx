@@ -2,10 +2,12 @@
 
 import { useState, useRef, useEffect } from 'react';
 import {
-  Shield, Leaf, Flame, Users, Map, CheckCircle2, XCircle,
-  Layers, Handshake, Droplet, Tent, ChevronRight, X,
+  Map, CheckCircle2, XCircle,
+  Layers, Handshake, Tent, ChevronRight, X,
   AlertTriangle,
-  UserCheck
+  UserCheck,
+  Leaf,
+  Users
 } from 'lucide-react';
 
 // --- DATA STRUCTURE (No changes needed) ---
@@ -83,14 +85,6 @@ export default function ForestDashboardSidebar({ forest, onClose }: StatCardProp
       case 'active': case 'stable': return 'text-green-600 bg-green-100';
       case 'ongoing': case 'at risk': return 'text-yellow-600 bg-yellow-100';
       case 'critical': return 'text-red-600 bg-red-100';
-      default: return 'text-gray-600 bg-gray-100';
-    }
-  };
-  const getRiskColor = (level: string) => {
-    switch (level?.toLowerCase()) {
-      case 'low': return 'text-green-600 bg-green-100';
-      case 'medium': return 'text-yellow-600 bg-yellow-100';
-      case 'high': return 'text-orange-600 bg-orange-100';
       default: return 'text-gray-600 bg-gray-100';
     }
   };

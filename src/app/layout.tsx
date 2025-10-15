@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Forester - Forest Management Portal",
+  title: "FRASaarthi - Forest Management Portal",
   description:
     "Advanced forest management and monitoring dashboard with interactive mapping capabilities",
 };

@@ -1,0 +1,436 @@
+{
+  "locations": [
+    {
+      "id": "loc_mp_001",
+      "name": "Balaghat Tribal Area",
+      "type": "tribal_area",
+      "state": "Madhya Pradesh",
+      "district": "Balaghat",
+      "villages": ["Baihar", "Lanji", "Waraseoni"],
+      "coordinates": {
+        "lat": 21.8047,
+        "lng": 80.1847
+      },
+      "boundary": [
+        [21.7000, 80.0500],
+        [21.9500, 80.0500],
+        [21.9500, 80.3500],
+        [21.7000, 80.3500]
+      ],
+      "tribalGroups": ["Gond", "Baiga"],
+      "fraProgress": {
+        "coverage": 58,
+        "totalClaims": 680,
+        "grantedClaims": 520,
+        "pendingClaims": 120,
+        "rejectedClaims": 40,
+        "households": 9600,
+        "status": "Active",
+        "dependency": "Medium",
+        "populationTrend": "Stable"
+      },
+      "landUse": {
+        "agriculturalLand": 35,
+        "forestCover": 50,
+        "waterBodies": 5,
+        "homesteads": 10
+      },
+      "dataLayers": {
+        "classificationModel": "CNN",
+        "groundwaterLevel": "Low",
+        "pmGatiShaktiScore": 62
+      },
+      "risk": {
+        "fireLevel": "High",
+        "firePercentage": 22,
+        "biodiversityIndex": 68,
+        "endangeredSpecies": 8,
+        "conservationStatus": "Moderate"
+      },
+      "schemes": {
+        "pmKisan": true,
+        "mgnrega": true,
+        "jalJeevan": true,
+        "pmay": true
+      }
+    },
+    {
+      "id": "loc_mp_002",
+      "name": "Kanha Tiger Reserve",
+      "type": "tiger_reserve",
+      "state": "Madhya Pradesh",
+      "district": "Mandla",
+      "villages": ["Kanha", "Kisli", "Mukki"],
+      "coordinates": {
+        "lat": 22.3344,
+        "lng": 80.6119
+      },
+      "boundary": [
+        [22.2500, 80.5000],
+        [22.4500, 80.5000],
+        [22.4500, 80.7500],
+        [22.2500, 80.7500]
+      ],
+      "tribalGroups": ["Gond", "Baiga"],
+      "fraProgress": {
+        "coverage": 48,
+        "totalClaims": 380,
+        "grantedClaims": 290,
+        "pendingClaims": 70,
+        "rejectedClaims": 20,
+        "households": 5100,
+        "status": "Active",
+        "dependency": "Medium",
+        "populationTrend": "Stable"
+      },
+      "landUse": {
+        "agriculturalLand": 12,
+        "forestCover": 80,
+        "waterBodies": 3,
+        "homesteads": 5
+      },
+      "dataLayers": {
+        "classificationModel": "CNN",
+        "groundwaterLevel": "Moderate",
+        "pmGatiShaktiScore": 70
+      },
+      "risk": {
+        "fireLevel": "Medium",
+        "firePercentage": 10,
+        "biodiversityIndex": 88,
+        "endangeredSpecies": 20,
+        "conservationStatus": "Good"
+      },
+      "schemes": {
+        "pmKisan": true,
+        "mgnrega": true,
+        "jalJeevan": true,
+        "pmay": true
+      }
+    },
+    {
+      "id": "loc_mp_003",
+      "name": "Panna Tiger Reserve",
+      "type": "tiger_reserve",
+      "state": "Madhya Pradesh",
+      "district": "Panna",
+      "villages": ["Hinauta", "Madla", "Akola"],
+      "coordinates": {
+        "lat": 24.7167,
+        "lng": 80.1833
+      },
+      "boundary": [
+        [24.6000, 80.0500],
+        [24.8500, 80.0500],
+        [24.8500, 80.3500],
+        [24.6000, 80.3500]
+      ],
+      "tribalGroups": ["Gond", "Kol"],
+      "fraProgress": {
+        "coverage": 55,
+        "totalClaims": 420,
+        "grantedClaims": 340,
+        "pendingClaims": 60,
+        "rejectedClaims": 20,
+        "households": 5700,
+        "status": "Active",
+        "dependency": "High",
+        "populationTrend": "Increasing"
+      },
+      "landUse": {
+        "agriculturalLand": 22,
+        "forestCover": 68,
+        "waterBodies": 5,
+        "homesteads": 5
+      },
+      "dataLayers": {
+        "classificationModel": "Random Forest",
+        "groundwaterLevel": "Low",
+        "pmGatiShaktiScore": 65
+      },
+      "risk": {
+        "fireLevel": "High",
+        "firePercentage": 20,
+        "biodiversityIndex": 75,
+        "endangeredSpecies": 14,
+        "conservationStatus": "Moderate"
+      },
+      "schemes": {
+        "pmKisan": true,
+        "mgnrega": true,
+        "jalJeevan": false,
+        "pmay": true
+      }
+    },
+    {
+      "id": "loc_mp_004",
+      "name": "Satpura Tiger Reserve",
+      "type": "tiger_reserve",
+      "state": "Madhya Pradesh",
+      "district": "Hoshangabad",
+      "villages": ["Madhai", "Churna", "Bori"],
+      "coordinates": {
+        "lat": 22.5000,
+        "lng": 78.4333
+      },
+      "boundary": [
+        [22.3500, 78.2500],
+        [22.6500, 78.2500],
+        [22.6500, 78.6500],
+        [22.3500, 78.6500]
+      ],
+      "tribalGroups": ["Gond", "Korku"],
+      "fraProgress": {
+        "coverage": 62,
+        "totalClaims": 510,
+        "grantedClaims": 420,
+        "pendingClaims": 70,
+        "rejectedClaims": 20,
+        "households": 6800,
+        "status": "Ongoing",
+        "dependency": "High",
+        "populationTrend": "Increasing"
+      },
+      "landUse": {
+        "agriculturalLand": 35,
+        "forestCover": 50,
+        "waterBodies": 5,
+        "homesteads": 10
+      },
+      "dataLayers": {
+        "classificationModel": "CNN",
+        "groundwaterLevel": "Low",
+        "pmGatiShaktiScore": 62
+      },
+      "risk": {
+        "fireLevel": "High",
+        "firePercentage": 22,
+        "biodiversityIndex": 68,
+        "endangeredSpecies": 8,
+        "conservationStatus": "Moderate"
+      },
+      "schemes": {
+        "pmKisan": true,
+        "mgnrega": true,
+        "jalJeevan": false,
+        "pmay": true
+      }
+    },
+    {
+      "id": "loc_od_001",
+      "name": "Similipal Tiger Reserve",
+      "type": "tiger_reserve",
+      "state": "Odisha",
+      "district": "Mayurbhanj",
+      "villages": ["Jashipur", "Karanjia", "Rairangpur"],
+      "coordinates": {
+        "lat": 21.7333,
+        "lng": 86.2333
+      },
+      "boundary": [
+        [21.5500, 86.0500],
+        [21.9500, 86.0500],
+        [21.9500, 86.4500],
+        [21.5500, 86.4500]
+      ],
+      "tribalGroups": ["Santhal", "Kolha"],
+      "fraProgress": {
+        "coverage": 52,
+        "totalClaims": 450,
+        "grantedClaims": 340,
+        "pendingClaims": 80,
+        "rejectedClaims": 30,
+        "households": 6300,
+        "status": "Active",
+        "dependency": "High",
+        "populationTrend": "Stable"
+      },
+      "landUse": {
+        "agriculturalLand": 18,
+        "forestCover": 72,
+        "waterBodies": 4,
+        "homesteads": 6
+      },
+      "dataLayers": {
+        "classificationModel": "Random Forest",
+        "groundwaterLevel": "Moderate",
+        "pmGatiShaktiScore": 58
+      },
+      "risk": {
+        "fireLevel": "Medium",
+        "firePercentage": 14,
+        "biodiversityIndex": 82,
+        "endangeredSpecies": 15,
+        "conservationStatus": "Stable"
+      },
+      "schemes": {
+        "pmKisan": true,
+        "mgnrega": true,
+        "jalJeevan": true,
+        "pmay": false
+      }
+    },
+    {
+      "id": "loc_ts_001",
+      "name": "Kawal Tiger Reserve",
+      "type": "tiger_reserve",
+      "state": "Telangana",
+      "district": "Adilabad",
+      "villages": ["Jannaram", "Kagaznagar", "Bellampalli"],
+      "coordinates": {
+        "lat": 19.0500,
+        "lng": 79.2000
+      },
+      "boundary": [
+        [18.9000, 79.0500],
+        [19.2000, 79.0500],
+        [19.2000, 79.3500],
+        [18.9000, 79.3500]
+      ],
+      "tribalGroups": ["Gond", "Kolam"],
+      "fraProgress": {
+        "coverage": 45,
+        "totalClaims": 320,
+        "grantedClaims": 240,
+        "pendingClaims": 60,
+        "rejectedClaims": 20,
+        "households": 4200,
+        "status": "Active",
+        "dependency": "High",
+        "populationTrend": "Stable"
+      },
+      "landUse": {
+        "agriculturalLand": 25,
+        "forestCover": 65,
+        "waterBodies": 5,
+        "homesteads": 5
+      },
+      "dataLayers": {
+        "classificationModel": "CNN",
+        "groundwaterLevel": "Low",
+        "pmGatiShaktiScore": 68
+      },
+      "risk": {
+        "fireLevel": "High",
+        "firePercentage": 18,
+        "biodiversityIndex": 72,
+        "endangeredSpecies": 12,
+        "conservationStatus": "Moderate"
+      },
+      "schemes": {
+        "pmKisan": true,
+        "mgnrega": true,
+        "jalJeevan": true,
+        "pmay": true
+      }
+    },
+    {
+      "id": "loc_tr_001",
+      "name": "Dampa Tiger Reserve",
+      "type": "tiger_reserve",
+      "state": "Tripura",
+      "district": "Mamit",
+      "villages": ["Dampa", "Phuldungsei", "Teirei"],
+      "coordinates": {
+        "lat": 23.4500,
+        "lng": 92.4000
+      },
+      "boundary": [
+        [23.3500, 92.3000],
+        [23.5500, 92.3000],
+        [23.5500, 92.5000],
+        [23.3500, 92.5000]
+      ],
+      "tribalGroups": ["Mizo", "Chakma"],
+      "fraProgress": {
+        "coverage": 35,
+        "totalClaims": 150,
+        "grantedClaims": 100,
+        "pendingClaims": 40,
+        "rejectedClaims": 10,
+        "households": 2000,
+        "status": "Active",
+        "dependency": "Medium",
+        "populationTrend": "Increasing"
+      },
+      "landUse": {
+        "agriculturalLand": 15,
+        "forestCover": 78,
+        "waterBodies": 4,
+        "homesteads": 3
+      },
+      "dataLayers": {
+        "classificationModel": "CNN",
+        "groundwaterLevel": "High",
+        "pmGatiShaktiScore": 78
+      },
+      "risk": {
+        "fireLevel": "Low",
+        "firePercentage": 5,
+        "biodiversityIndex": 85,
+        "endangeredSpecies": 22,
+        "conservationStatus": "Good"
+      },
+      "schemes": {
+        "pmKisan": false,
+        "mgnrega": true,
+        "jalJeevan": true,
+        "pmay": false
+      }
+    },
+    {
+      "id": "loc_tr_002",
+      "name": "Sepahijala Wildlife Sanctuary",
+      "type": "wildlife_sanctuary",
+      "state": "Tripura",
+      "district": "Sepahijala",
+      "villages": ["Bishalgarh", "Sonamura", "Melaghar"],
+      "coordinates": {
+        "lat": 23.6333,
+        "lng": 91.4167
+      },
+      "boundary": [
+        [23.5500, 91.3500],
+        [23.7500, 91.3500],
+        [23.7500, 91.5000],
+        [23.5500, 91.5000]
+      ],
+      "tribalGroups": ["Tripuri", "Reang"],
+      "fraProgress": {
+        "coverage": 38,
+        "totalClaims": 180,
+        "grantedClaims": 120,
+        "pendingClaims": 45,
+        "rejectedClaims": 15,
+        "households": 2400,
+        "status": "Active",
+        "dependency": "High",
+        "populationTrend": "Stable"
+      },
+      "landUse": {
+        "agriculturalLand": 30,
+        "forestCover": 55,
+        "waterBodies": 8,
+        "homesteads": 7
+      },
+      "dataLayers": {
+        "classificationModel": "Random Forest",
+        "groundwaterLevel": "High",
+        "pmGatiShaktiScore": 55
+      },
+      "risk": {
+        "fireLevel": "Low",
+        "firePercentage": 8,
+        "biodiversityIndex": 65,
+        "endangeredSpecies": 10,
+        "conservationStatus": "Stable"
+      },
+      "schemes": {
+        "pmKisan": true,
+        "mgnrega": true,
+        "jalJeevan": false,
+        "pmay": true
+      }
+    }
+  ]
+}

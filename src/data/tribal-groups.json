@@ -1,0 +1,184 @@
+{
+  "tribalGroups": [
+    {
+      "id": "gond",
+      "name": "Gond",
+      "population": 10000000,
+      "states": ["Madhya Pradesh", "Chhattisgarh", "Maharashtra", "Odisha", "Andhra Pradesh"],
+      "language": "Gondi",
+      "primaryOccupation": "Agriculture and forest produce collection",
+      "description": "One of the largest tribal groups in India, traditionally forest dwellers with rich cultural heritage",
+      "fraParticipation": "High"
+    },
+    {
+      "id": "bhil",
+      "name": "Bhil",
+      "population": 9000000,
+      "states": ["Rajasthan", "Gujarat", "Madhya Pradesh", "Maharashtra"],
+      "language": "Bhili",
+      "primaryOccupation": "Agriculture and daily wage labor",
+      "description": "Known for their warrior traditions and skilled archery, primarily inhabit hilly and forested regions",
+      "fraParticipation": "High"
+    },
+    {
+      "id": "santhal",
+      "name": "Santhal",
+      "population": 6000000,
+      "states": ["Jharkhand", "West Bengal", "Bihar", "Odisha", "Assam"],
+      "language": "Santhali",
+      "primaryOccupation": "Agriculture and animal husbandry",
+      "description": "Known for their distinct culture, music, and dance forms, primarily settled agriculturalists",
+      "fraParticipation": "Medium"
+    },
+    {
+      "id": "munda",
+      "name": "Munda",
+      "population": 2000000,
+      "states": ["Jharkhand", "West Bengal", "Odisha", "Chhattisgarh"],
+      "language": "Mundari",
+      "primaryOccupation": "Agriculture and forest-based livelihoods",
+      "description": "Known for their traditional self-governance system and agricultural practices",
+      "fraParticipation": "High"
+    },
+    {
+      "id": "oraon",
+      "name": "Oraon",
+      "population": 3500000,
+      "states": ["Jharkhand", "Chhattisgarh", "West Bengal", "Odisha"],
+      "language": "Kurukh",
+      "primaryOccupation": "Agriculture and tea plantation work",
+      "description": "Also known as Kurukh, traditionally agriculturalists with strong community bonds",
+      "fraParticipation": "Medium"
+    },
+    {
+      "id": "khasi",
+      "name": "Khasi",
+      "population": 1400000,
+      "states": ["Meghalaya", "Assam"],
+      "language": "Khasi",
+      "primaryOccupation": "Agriculture, horticulture, and trade",
+      "description": "Matrilineal society known for their unique living root bridges and agricultural practices",
+      "fraParticipation": "Low"
+    },
+    {
+      "id": "baiga",
+      "name": "Baiga",
+      "population": 350000,
+      "states": ["Madhya Pradesh", "Chhattisgarh"],
+      "language": "Baigani",
+      "primaryOccupation": "Shifting cultivation and forest produce collection",
+      "description": "Known for their traditional bewar cultivation and deep forest knowledge",
+      "fraParticipation": "High"
+    },
+    {
+      "id": "mising",
+      "name": "Mising",
+      "population": 680000,
+      "states": ["Assam", "Arunachal Pradesh"],
+      "language": "Mising",
+      "primaryOccupation": "Agriculture and fishing",
+      "description": "Riverine tribe known for their stilt houses and wet rice cultivation",
+      "fraParticipation": "Medium"
+    },
+    {
+      "id": "karbi",
+      "name": "Karbi",
+      "population": 500000,
+      "states": ["Assam"],
+      "language": "Karbi",
+      "primaryOccupation": "Jhum cultivation and horticulture",
+      "description": "Hill tribe with autonomous district council, practice shifting cultivation",
+      "fraParticipation": "Medium"
+    },
+    {
+      "id": "kolha",
+      "name": "Kolha",
+      "population": 450000,
+      "states": ["Odisha", "West Bengal", "Jharkhand"],
+      "language": "Kolha",
+      "primaryOccupation": "Agriculture and forest produce collection",
+      "description": "Forest-dwelling community with traditional knowledge of medicinal plants",
+      "fraParticipation": "High"
+    },
+    {
+      "id": "kol",
+      "name": "Kol",
+      "population": 800000,
+      "states": ["Madhya Pradesh", "Uttar Pradesh", "Bihar"],
+      "language": "Kol",
+      "primaryOccupation": "Agriculture and daily wage labor",
+      "description": "One of the oldest tribal groups, traditionally forest dwellers and cultivators",
+      "fraParticipation": "Medium"
+    },
+    {
+      "id": "korku",
+      "name": "Korku",
+      "population": 750000,
+      "states": ["Madhya Pradesh", "Maharashtra"],
+      "language": "Korku",
+      "primaryOccupation": "Agriculture and forest produce collection",
+      "description": "Known for their traditional forest-based economy and cultural practices",
+      "fraParticipation": "High"
+    },
+    {
+      "id": "jenu_kuruba",
+      "name": "Jenu Kuruba",
+      "population": 40000,
+      "states": ["Karnataka"],
+      "language": "Kannada",
+      "primaryOccupation": "Honey collection and forest produce gathering",
+      "description": "Particularly Vulnerable Tribal Group known for honey collection in forests",
+      "fraParticipation": "High"
+    },
+    {
+      "id": "betta_kuruba",
+      "name": "Betta Kuruba",
+      "population": 35000,
+      "states": ["Karnataka"],
+      "language": "Kannada",
+      "primaryOccupation": "Shifting cultivation and animal husbandry",
+      "description": "Hill-dwelling community with traditional forest rights",
+      "fraParticipation": "High"
+    },
+    {
+      "id": "kani",
+      "name": "Kani",
+      "population": 18000,
+      "states": ["Kerala", "Tamil Nadu"],
+      "language": "Malayalam",
+      "primaryOccupation": "Forest produce collection and traditional medicine",
+      "description": "Known for their extensive knowledge of medicinal plants and forest ecology",
+      "fraParticipation": "Medium"
+    },
+    {
+      "id": "kadar",
+      "name": "Kadar",
+      "population": 12000,
+      "states": ["Kerala"],
+      "language": "Malayalam",
+      "primaryOccupation": "Forest produce collection and wage labor",
+      "description": "Particularly Vulnerable Tribal Group living in dense forest areas",
+      "fraParticipation": "High"
+    },
+    {
+      "id": "mannan",
+      "name": "Mannan",
+      "population": 25000,
+      "states": ["Kerala"],
+      "language": "Malayalam",
+      "primaryOccupation": "Agriculture and forest produce collection",
+      "description": "Forest-dwelling community with traditional agricultural practices",
+      "fraParticipation": "Medium"
+    },
+    {
+      "id": "paliyan",
+      "name": "Paliyan",
+      "population": 8000,
+      "states": ["Tamil Nadu", "Kerala"],
+      "language": "Tamil",
+      "primaryOccupation": "Hunting, gathering, and shifting cultivation",
+      "description": "Particularly Vulnerable Tribal Group with nomadic traditions",
+      "fraParticipation": "Low"
+    }
+  ]
+}

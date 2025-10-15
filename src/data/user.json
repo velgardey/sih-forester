@@ -1,7 +1,7 @@
 {
   "user": {
-    "name": "Forest Ranger",
-    "role": "Forest Ranger",
+    "name": "Forest Officer",
+    "role": "Forest Officer",
     "avatar": {
       "type": "icon",
       "icon": "User",
@@ -10,7 +10,7 @@
     }
   },
   "app": {
-    "name": "Forester",
+    "name": "FRASaarthi",
     "description": "Forest Management Portal",
     "logo": {
       "icon": "Trees",

@@ -12,10 +12,10 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #ffffff;
+    --foreground: #000000;
   }
 }
 
@@ -28,3 +28,10 @@ body {
 .leaflet-control { z-index: 1000 !important}
 .leaflet-pane { z-index: 1000 !important}
 .leaflet-top, .leaflet-bottom {z-index: 1000 !important}
+
+/* Move zoom controls to bottom left */
+.leaflet-top.leaflet-left {
+  top: auto !important;
+  bottom: 20px !important;
+  left: 20px !important;
+}

@@ -1,0 +1,203 @@
+{
+  "layers": [
+    {
+      "id": "ifr_boundaries",
+      "name": "IFR Boundaries",
+      "category": "boundaries",
+      "description": "Individual Forest Rights claim boundaries showing approved and pending claims",
+      "icon": "Square",
+      "color": "#10b981",
+      "strokeColor": "#059669",
+      "strokeWidth": 2,
+      "fillOpacity": 0.3,
+      "defaultOpacity": 0.6,
+      "defaultEnabled": true,
+      "dataSource": "claims.json",
+      "zIndex": 400
+    },
+    {
+      "id": "cr_boundaries",
+      "name": "CR Boundaries",
+      "category": "boundaries",
+      "description": "Community Rights claim boundaries for grazing, NTFP collection, and other community uses",
+      "icon": "Users",
+      "color": "#3b82f6",
+      "strokeColor": "#2563eb",
+      "strokeWidth": 2,
+      "fillOpacity": 0.3,
+      "defaultOpacity": 0.6,
+      "defaultEnabled": true,
+      "dataSource": "claims.json",
+      "zIndex": 390
+    },
+    {
+      "id": "village_boundaries",
+      "name": "Village Boundaries",
+      "category": "boundaries",
+      "description": "Administrative village boundaries showing revenue village limits",
+      "icon": "MapPin",
+      "color": "#6b7280",
+      "strokeColor": "#4b5563",
+      "strokeWidth": 1,
+      "fillOpacity": 0.1,
+      "defaultOpacity": 0.4,
+      "defaultEnabled": false,
+      "dataSource": "locations.json",
+      "zIndex": 300
+    },
+    {
+      "id": "land_use",
+      "name": "Land Use Classification",
+      "category": "land-use",
+      "description": "Land use classification showing agricultural land, forest cover, water bodies, and settlements",
+      "icon": "Layers",
+      "color": "#f59e0b",
+      "defaultOpacity": 0.5,
+      "defaultEnabled": true,
+      "dataSource": "locations.json",
+      "zIndex": 200,
+      "legend": [
+        { "label": "Agricultural Land", "color": "#fbbf24" },
+        { "label": "Forest Cover", "color": "#10b981" },
+        { "label": "Water Bodies", "color": "#3b82f6" },
+        { "label": "Homesteads", "color": "#ef4444" }
+      ]
+    },
+    {
+      "id": "detected_assets",
+      "name": "AI Detected Assets",
+      "category": "assets",
+      "description": "Assets detected using AI/ML models from satellite imagery",
+      "icon": "Cpu",
+      "color": "#8b5cf6",
+      "defaultOpacity": 0.7,
+      "defaultEnabled": false,
+      "dataSource": "assets.json",
+      "zIndex": 500,
+      "legend": [
+        { "label": "Agricultural Land", "color": "#fbbf24", "icon": "Wheat" },
+        { "label": "Forest Cover", "color": "#10b981", "icon": "Trees" },
+        { "label": "Water Bodies", "color": "#3b82f6", "icon": "Droplet" },
+        { "label": "Homesteads", "color": "#ef4444", "icon": "Home" }
+      ]
+    },
+    {
+      "id": "forest_density",
+      "name": "Forest Density",
+      "category": "data",
+      "description": "Forest density classification based on canopy cover percentage",
+      "icon": "Trees",
+      "color": "#059669",
+      "defaultOpacity": 0.5,
+      "defaultEnabled": false,
+      "dataSource": "forest-data.json",
+      "zIndex": 250,
+      "legend": [
+        { "label": "Very Dense (>70%)", "color": "#064e3b" },
+        { "label": "Moderately Dense (40-70%)", "color": "#059669" },
+        { "label": "Open Forest (10-40%)", "color": "#34d399" },
+        { "label": "Scrub (<10%)", "color": "#d1fae5" }
+      ]
+    },
+    {
+      "id": "forest_types",
+      "name": "Forest Types",
+      "category": "data",
+      "description": "Classification of forest types based on vegetation and ecology",
+      "icon": "TreeDeciduous",
+      "color": "#16a34a",
+      "defaultOpacity": 0.5,
+      "defaultEnabled": false,
+      "dataSource": "forest-data.json",
+      "zIndex": 240,
+      "legend": [
+        { "label": "Tropical Evergreen", "color": "#064e3b" },
+        { "label": "Tropical Deciduous", "color": "#16a34a" },
+        { "label": "Mangrove", "color": "#0891b2" },
+        { "label": "Montane", "color": "#6366f1" }
+      ]
+    },
+    {
+      "id": "protected_areas",
+      "name": "Protected Areas",
+      "category": "data",
+      "description": "National parks, wildlife sanctuaries, and tiger reserves",
+      "icon": "Shield",
+      "color": "#dc2626",
+      "strokeColor": "#991b1b",
+      "strokeWidth": 3,
+      "fillOpacity": 0.1,
+      "defaultOpacity": 0.4,
+      "defaultEnabled": true,
+      "dataSource": "forest-data.json",
+      "zIndex": 350,
+      "legend": [
+        { "label": "National Park", "color": "#dc2626" },
+        { "label": "Wildlife Sanctuary", "color": "#f97316" },
+        { "label": "Tiger Reserve", "color": "#ea580c" }
+      ]
+    },
+    {
+      "id": "groundwater",
+      "name": "Groundwater Levels",
+      "category": "data",
+      "description": "Groundwater availability and quality indicators",
+      "icon": "Droplet",
+      "color": "#0ea5e9",
+      "defaultOpacity": 0.5,
+      "defaultEnabled": false,
+      "dataSource": "groundwater.json",
+      "zIndex": 220,
+      "legend": [
+        { "label": "High", "color": "#0284c7" },
+        { "label": "Moderate", "color": "#0ea5e9" },
+        { "label": "Low", "color": "#7dd3fc" },
+        { "label": "Critical", "color": "#ef4444" }
+      ]
+    },
+    {
+      "id": "infrastructure",
+      "name": "Infrastructure (PM Gati Shakti)",
+      "category": "data",
+      "description": "Infrastructure elements and PM Gati Shakti connectivity scores",
+      "icon": "Route",
+      "color": "#f59e0b",
+      "defaultOpacity": 0.6,
+      "defaultEnabled": false,
+      "dataSource": "infrastructure.json",
+      "zIndex": 230,
+      "legend": [
+        { "label": "Roads", "color": "#78716c", "icon": "Route" },
+        { "label": "Railways", "color": "#1e293b", "icon": "Train" },
+        { "label": "Electricity", "color": "#fbbf24", "icon": "Zap" },
+        { "label": "Telecom", "color": "#8b5cf6", "icon": "Radio" }
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "id": "boundaries",
+      "name": "Boundaries",
+      "description": "Administrative and claim boundaries",
+      "icon": "Square"
+    },
+    {
+      "id": "land-use",
+      "name": "Land Use",
+      "description": "Land use and land cover classification",
+      "icon": "Layers"
+    },
+    {
+      "id": "assets",
+      "name": "Assets",
+      "description": "AI-detected assets and features",
+      "icon": "Cpu"
+    },
+    {
+      "id": "data",
+      "name": "Environmental Data",
+      "description": "Forest, water, and infrastructure data layers",
+      "icon": "Database"
+    }
+  ]
+}

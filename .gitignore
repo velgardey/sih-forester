@@ -19,6 +19,9 @@
 
 # production
 /build
+.kiro
+.idea
+.vscode
 
 # misc
 .DS_Store

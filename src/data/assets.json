@@ -1,0 +1,415 @@
+{
+  "assets": [
+    {
+      "id": "asset_001",
+      "type": "agricultural_land",
+      "locationId": "loc_001",
+      "locationName": "Kaziranga National Park",
+      "state": "Assam",
+      "district": "Golaghat",
+      "village": "Kohora",
+      "coordinates": {
+        "lat": 26.5780,
+        "lng": 93.1720
+      },
+      "boundary": [
+        [26.5780, 93.1720],
+        [26.5785, 93.1725],
+        [26.5775, 93.1730],
+        [26.5770, 93.1725]
+      ],
+      "area": 15.5,
+      "unit": "hectares",
+      "confidence": 0.92,
+      "detectionDate": "2025-03-01",
+      "detectionModel": "CNN",
+      "modelVersion": "v2.3",
+      "verified": false,
+      "verificationStatus": "Pending",
+      "imageSource": "Sentinel-2",
+      "imageDate": "2025-02-25",
+      "resolution": "10m"
+    },
+    {
+      "id": "asset_002",
+      "type": "water_body",
+      "locationId": "loc_001",
+      "locationName": "Kaziranga National Park",
+      "state": "Assam",
+      "district": "Golaghat",
+      "village": "Bagori",
+      "coordinates": {
+        "lat": 26.5760,
+        "lng": 93.1700
+      },
+      "boundary": [
+        [26.5760, 93.1700],
+        [26.5765, 93.1705],
+        [26.5755, 93.1710],
+        [26.5750, 93.1705]
+      ],
+      "area": 3.2,
+      "unit": "hectares",
+      "confidence": 0.95,
+      "detectionDate": "2025-03-01",
+      "detectionModel": "Random Forest",
+      "modelVersion": "v1.8",
+      "verified": true,
+      "verificationStatus": "Verified",
+      "verifiedBy": "Field Officer Kumar",
+      "verificationDate": "2025-03-10",
+      "imageSource": "Sentinel-2",
+      "imageDate": "2025-02-25",
+      "resolution": "10m"
+    },
+    {
+      "id": "asset_003",
+      "type": "forest_cover",
+      "locationId": "loc_001",
+      "locationName": "Kaziranga National Park",
+      "state": "Assam",
+      "district": "Golaghat",
+      "village": "Agoratoli",
+      "coordinates": {
+        "lat": 26.5800,
+        "lng": 93.1750
+      },
+      "boundary": [
+        [26.5800, 93.1750],
+        [26.5820, 93.1770],
+        [26.5790, 93.1780],
+        [26.5770, 93.1760]
+      ],
+      "area": 125.8,
+      "unit": "hectares",
+      "confidence": 0.88,
+      "detectionDate": "2025-03-01",
+      "detectionModel": "CNN",
+      "modelVersion": "v2.3",
+      "verified": true,
+      "verificationStatus": "Verified",
+      "verifiedBy": "Forest Officer Singh",
+      "verificationDate": "2025-03-08",
+      "forestDensity": "Very Dense",
+      "canopyCover": 78,
+      "imageSource": "Sentinel-2",
+      "imageDate": "2025-02-25",
+      "resolution": "10m"
+    },
+    {
+      "id": "asset_004",
+      "type": "homestead",
+      "locationId": "loc_002",
+      "locationName": "Sundarbans",
+      "state": "West Bengal",
+      "district": "South 24 Parganas",
+      "village": "Gosaba",
+      "coordinates": {
+        "lat": 21.9500,
+        "lng": 89.1840
+      },
+      "boundary": [
+        [21.9500, 89.1840],
+        [21.9502, 89.1842],
+        [21.9498, 89.1844],
+        [21.9496, 89.1842]
+      ],
+      "area": 0.8,
+      "unit": "hectares",
+      "confidence": 0.85,
+      "detectionDate": "2025-02-28",
+      "detectionModel": "CNN",
+      "modelVersion": "v2.3",
+      "verified": false,
+      "verificationStatus": "Pending",
+      "imageSource": "Sentinel-2",
+      "imageDate": "2025-02-20",
+      "resolution": "10m"
+    },
+    {
+      "id": "asset_005",
+      "type": "agricultural_land",
+      "locationId": "loc_003",
+      "locationName": "Western Ghats - Agasthyamalai",
+      "state": "Kerala",
+      "district": "Thiruvananthapuram",
+      "village": "Bonacaud",
+      "coordinates": {
+        "lat": 8.5840,
+        "lng": 77.1850
+      },
+      "boundary": [
+        [8.5840, 77.1850],
+        [8.5845, 77.1855],
+        [8.5835, 77.1860],
+        [8.5830, 77.1855]
+      ],
+      "area": 22.3,
+      "unit": "hectares",
+      "confidence": 0.90,
+      "detectionDate": "2025-03-05",
+      "detectionModel": "CNN",
+      "modelVersion": "v2.3",
+      "verified": true,
+      "verificationStatus": "Verified",
+      "verifiedBy": "Agricultural Officer Nair",
+      "verificationDate": "2025-03-12",
+      "cropType": "Mixed Cultivation",
+      "imageSource": "Sentinel-2",
+      "imageDate": "2025-03-01",
+      "resolution": "10m"
+    },
+    {
+      "id": "asset_006",
+      "type": "forest_cover",
+      "locationId": "loc_004",
+      "locationName": "Balaghat Tribal Area",
+      "state": "Madhya Pradesh",
+      "district": "Balaghat",
+      "village": "Baihar",
+      "coordinates": {
+        "lat": 21.8050,
+        "lng": 80.1860
+      },
+      "boundary": [
+        [21.8050, 80.1860],
+        [21.8070, 80.1880],
+        [21.8040, 80.1890],
+        [21.8020, 80.1870]
+      ],
+      "area": 85.6,
+      "unit": "hectares",
+      "confidence": 0.87,
+      "detectionDate": "2025-02-25",
+      "detectionModel": "Random Forest",
+      "modelVersion": "v1.8",
+      "verified": true,
+      "verificationStatus": "Verified",
+      "verifiedBy": "DFO Balaghat",
+      "verificationDate": "2025-03-05",
+      "forestDensity": "Moderately Dense",
+      "canopyCover": 55,
+      "imageSource": "Landsat-8",
+      "imageDate": "2025-02-20",
+      "resolution": "30m"
+    },
+    {
+      "id": "asset_007",
+      "type": "water_body",
+      "locationId": "loc_004",
+      "locationName": "Balaghat Tribal Area",
+      "state": "Madhya Pradesh",
+      "district": "Balaghat",
+      "village": "Lanji",
+      "coordinates": {
+        "lat": 21.8100,
+        "lng": 80.1920
+      },
+      "boundary": [
+        [21.8100, 80.1920],
+        [21.8105, 80.1925],
+        [21.8095, 80.1930],
+        [21.8090, 80.1925]
+      ],
+      "area": 2.5,
+      "unit": "hectares",
+      "confidence": 0.93,
+      "detectionDate": "2025-02-25",
+      "detectionModel": "CNN",
+      "modelVersion": "v2.3",
+      "verified": true,
+      "verificationStatus": "Verified",
+      "verifiedBy": "Irrigation Officer",
+      "verificationDate": "2025-03-02",
+      "waterBodyType": "Pond",
+      "imageSource": "Sentinel-2",
+      "imageDate": "2025-02-20",
+      "resolution": "10m"
+    },
+    {
+      "id": "asset_008",
+      "type": "agricultural_land",
+      "locationId": "loc_005",
+      "locationName": "Similipal Tiger Reserve",
+      "state": "Odisha",
+      "district": "Mayurbhanj",
+      "village": "Jashipur",
+      "coordinates": {
+        "lat": 21.7340,
+        "lng": 86.2350
+      },
+      "boundary": [
+        [21.7340, 86.2350],
+        [21.7345, 86.2355],
+        [21.7335, 86.2360],
+        [21.7330, 86.2355]
+      ],
+      "area": 18.2,
+      "unit": "hectares",
+      "confidence": 0.89,
+      "detectionDate": "2025-03-03",
+      "detectionModel": "CNN",
+      "modelVersion": "v2.3",
+      "verified": false,
+      "verificationStatus": "Pending",
+      "imageSource": "Sentinel-2",
+      "imageDate": "2025-02-28",
+      "resolution": "10m"
+    },
+    {
+      "id": "asset_009",
+      "type": "homestead",
+      "locationId": "loc_006",
+      "locationName": "Kanha Tiger Reserve",
+      "state": "Madhya Pradesh",
+      "district": "Mandla",
+      "village": "Kisli",
+      "coordinates": {
+        "lat": 22.3350,
+        "lng": 80.6140
+      },
+      "boundary": [
+        [22.3350, 80.6140],
+        [22.3352, 80.6142],
+        [22.3348, 80.6144],
+        [22.3346, 80.6142]
+      ],
+      "area": 0.6,
+      "unit": "hectares",
+      "confidence": 0.82,
+      "detectionDate": "2025-03-04",
+      "detectionModel": "CNN",
+      "modelVersion": "v2.3",
+      "verified": false,
+      "verificationStatus": "Pending",
+      "imageSource": "Sentinel-2",
+      "imageDate": "2025-03-01",
+      "resolution": "10m"
+    },
+    {
+      "id": "asset_010",
+      "type": "forest_cover",
+      "locationId": "loc_007",
+      "locationName": "Nagarhole National Park",
+      "state": "Karnataka",
+      "district": "Kodagu",
+      "village": "Veeranahosahalli",
+      "coordinates": {
+        "lat": 12.0010,
+        "lng": 76.1020
+      },
+      "boundary": [
+        [12.0010, 76.1020],
+        [12.0030, 76.1040],
+        [12.0000, 76.1050],
+        [11.9980, 76.1030]
+      ],
+      "area": 142.5,
+      "unit": "hectares",
+      "confidence": 0.91,
+      "detectionDate": "2025-03-02",
+      "detectionModel": "CNN",
+      "modelVersion": "v2.3",
+      "verified": true,
+      "verificationStatus": "Verified",
+      "verifiedBy": "Forest Officer Rao",
+      "verificationDate": "2025-03-09",
+      "forestDensity": "Very Dense",
+      "canopyCover": 82,
+      "imageSource": "Sentinel-2",
+      "imageDate": "2025-02-27",
+      "resolution": "10m"
+    },
+    {
+      "id": "asset_011",
+      "type": "water_body",
+      "locationId": "loc_009",
+      "locationName": "Periyar Tiger Reserve",
+      "state": "Kerala",
+      "district": "Idukki",
+      "village": "Kumily",
+      "coordinates": {
+        "lat": 9.4670,
+        "lng": 77.2350
+      },
+      "boundary": [
+        [9.4670, 77.2350],
+        [9.4675, 77.2355],
+        [9.4665, 77.2360],
+        [9.4660, 77.2355]
+      ],
+      "area": 4.8,
+      "unit": "hectares",
+      "confidence": 0.94,
+      "detectionDate": "2025-03-06",
+      "detectionModel": "Random Forest",
+      "modelVersion": "v1.8",
+      "verified": true,
+      "verificationStatus": "Verified",
+      "verifiedBy": "Wildlife Warden",
+      "verificationDate": "2025-03-11",
+      "waterBodyType": "Lake",
+      "imageSource": "Sentinel-2",
+      "imageDate": "2025-03-03",
+      "resolution": "10m"
+    },
+    {
+      "id": "asset_012",
+      "type": "agricultural_land",
+      "locationId": "loc_010",
+      "locationName": "Satpura Tiger Reserve",
+      "state": "Madhya Pradesh",
+      "district": "Hoshangabad",
+      "village": "Madhai",
+      "coordinates": {
+        "lat": 22.5010,
+        "lng": 78.4350
+      },
+      "boundary": [
+        [22.5010, 78.4350],
+        [22.5015, 78.4355],
+        [22.5005, 78.4360],
+        [22.5000, 78.4355]
+      ],
+      "area": 28.7,
+      "unit": "hectares",
+      "confidence": 0.88,
+      "detectionDate": "2025-03-07",
+      "detectionModel": "CNN",
+      "modelVersion": "v2.3",
+      "verified": false,
+      "verificationStatus": "Pending",
+      "imageSource": "Sentinel-2",
+      "imageDate": "2025-03-04",
+      "resolution": "10m"
+    }
+  ],
+  "detectionModels": [
+    {
+      "id": "cnn_v2.3",
+      "name": "Convolutional Neural Network",
+      "version": "v2.3",
+      "type": "Deep Learning",
+      "accuracy": 0.89,
+      "supportedAssets": ["agricultural_land", "forest_cover", "homestead", "water_body"],
+      "trainingDate": "2024-12-15",
+      "trainingDataSize": "50,000 images"
+    },
+    {
+      "id": "rf_v1.8",
+      "name": "Random Forest Classifier",
+      "version": "v1.8",
+      "type": "Machine Learning",
+      "accuracy": 0.85,
+      "supportedAssets": ["water_body", "forest_cover"],
+      "trainingDate": "2024-11-20",
+      "trainingDataSize": "30,000 images"
+    }
+  ],
+  "verificationStatus": {
+    "total": 12,
+    "verified": 6,
+    "pending": 6,
+    "rejected": 0
+  }
+}

@@ -28,8 +28,7 @@ export default function NewUserPage() {
   const onSubmit = async (data: UserForm) => {
     try {
       setLoading(true);
-      const res = await api.post("/users/", data);
-      const userId = res.data.user_id;
+      await api.post("/users/", data);
     } catch (err) {
       console.error(err);
       alert("Error creating user");

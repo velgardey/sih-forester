@@ -1,28 +1,34 @@
 {
   "navItems": [
     {
-      "id": "overview",
-      "label": "Overview",
-      "icon": "Trees",
-      "href":"/dashboard"
+      "id": "home",
+      "label": "Home",
+      "icon": "Home",
+      "href": "/"
     },
     {
-      "id": "monitoring",
-      "label": "Monitoring",
-      "icon": "Search",
-      "href":"/dashboard/monitoring"
+      "id": "fra-map",
+      "label": "FRA Map",
+      "icon": "Map",
+      "href": "/fra-map"
     },
     {
-      "id": "alerts",
-      "label": "Alerts",
-      "icon": "Bell",
-      "href":"/dashboard/alerts"
+      "id": "upload",
+      "label": "Upload",
+      "icon": "Upload",
+      "href": "/upload"
     },
     {
-      "id": "analytics",
-      "label": "Analytics",
-      "icon": "Settings",
-      "href":"/dashboard/analytics"
+      "id": "statistics",
+      "label": "Statistics",
+      "icon": "BarChart",
+      "href": "/statistics"
+    },
+    {
+      "id": "schemes",
+      "label": "Schemes",
+      "icon": "FileText",
+      "href": "/schemes"
     }
   ]
 }

@@ -1,0 +1,410 @@
+{
+  "infrastructure": [
+    {
+      "locationId": "loc_mp_001",
+      "locationName": "Balaghat Tribal Area",
+      "state": "Madhya Pradesh",
+      "district": "Balaghat",
+      "pmGatiShaktiScore": 75,
+      "connectivity": {
+        "roads": {
+          "score": 80,
+          "status": "Good",
+          "nearestHighway": "NH 37",
+          "distanceToHighway": 5,
+          "unit": "km",
+          "ruralRoadLength": 45,
+          "ruralRoadCondition": "Fair"
+        },
+        "railways": {
+          "score": 70,
+          "status": "Moderate",
+          "nearestStation": "Furkating Junction",
+          "distanceToStation": 12,
+          "unit": "km"
+        },
+        "electricity": {
+          "score": 75,
+          "status": "Good",
+          "coverage": 85,
+          "reliability": "Moderate",
+          "hoursPerDay": 18
+        },
+        "telecom": {
+          "score": 72,
+          "status": "Good",
+          "mobileCoverage": 80,
+          "internetAvailability": 65,
+          "providers": ["BSNL", "Airtel", "Jio"]
+        }
+      },
+      "lastUpdated": "2025-03-01"
+    },
+    {
+      "locationId": "loc_mp_002",
+      "locationName": "Kanha Tiger Reserve",
+      "state": "Madhya Pradesh",
+      "district": "Mandla",
+      "pmGatiShaktiScore": 68,
+      "connectivity": {
+        "roads": {
+          "score": 65,
+          "status": "Moderate",
+          "nearestHighway": "NH 12",
+          "distanceToHighway": 18,
+          "unit": "km",
+          "ruralRoadLength": 38,
+          "ruralRoadCondition": "Poor"
+        },
+        "railways": {
+          "score": 60,
+          "status": "Moderate",
+          "nearestStation": "Canning",
+          "distanceToStation": 22,
+          "unit": "km"
+        },
+        "electricity": {
+          "score": 70,
+          "status": "Moderate",
+          "coverage": 75,
+          "reliability": "Low",
+          "hoursPerDay": 14
+        },
+        "telecom": {
+          "score": 68,
+          "status": "Moderate",
+          "mobileCoverage": 70,
+          "internetAvailability": 55,
+          "providers": ["BSNL", "Airtel", "Vodafone"]
+        },
+        "waterways": {
+          "score": 85,
+          "status": "Excellent",
+          "type": "River and Creek Network",
+          "importance": "Primary Transport Mode"
+        }
+      },
+      "lastUpdated": "2025-02-28"
+    },
+    {
+      "locationId": "loc_mp_003",
+      "locationName": "Panna Tiger Reserve",
+      "state": "Madhya Pradesh",
+      "district": "Panna",
+      "pmGatiShaktiScore": 82,
+      "connectivity": {
+        "roads": {
+          "score": 85,
+          "status": "Excellent",
+          "nearestHighway": "NH 66",
+          "distanceToHighway": 8,
+          "unit": "km",
+          "ruralRoadLength": 52,
+          "ruralRoadCondition": "Good"
+        },
+        "railways": {
+          "score": 80,
+          "status": "Good",
+          "nearestStation": "Thiruvananthapuram Central",
+          "distanceToStation": 15,
+          "unit": "km"
+        },
+        "electricity": {
+          "score": 90,
+          "status": "Excellent",
+          "coverage": 98,
+          "reliability": "High",
+          "hoursPerDay": 23
+        },
+        "telecom": {
+          "score": 88,
+          "status": "Excellent",
+          "mobileCoverage": 95,
+          "internetAvailability": 85,
+          "providers": ["BSNL", "Airtel", "Jio", "Vi"]
+        }
+      },
+      "lastUpdated": "2025-03-05"
+    },
+    {
+      "locationId": "loc_mp_004",
+      "locationName": "Satpura Tiger Reserve",
+      "state": "Madhya Pradesh",
+      "district": "Hoshangabad",
+      "pmGatiShaktiScore": 62,
+      "connectivity": {
+        "roads": {
+          "score": 60,
+          "status": "Moderate",
+          "nearestHighway": "NH 44",
+          "distanceToHighway": 25,
+          "unit": "km",
+          "ruralRoadLength": 42,
+          "ruralRoadCondition": "Poor"
+        },
+        "railways": {
+          "score": 55,
+          "status": "Moderate",
+          "nearestStation": "Balaghat",
+          "distanceToStation": 28,
+          "unit": "km"
+        },
+        "electricity": {
+          "score": 65,
+          "status": "Moderate",
+          "coverage": 70,
+          "reliability": "Low",
+          "hoursPerDay": 12
+        },
+        "telecom": {
+          "score": 60,
+          "status": "Moderate",
+          "mobileCoverage": 65,
+          "internetAvailability": 45,
+          "providers": ["BSNL", "Jio"]
+        }
+      },
+      "lastUpdated": "2025-02-25"
+    },
+    {
+      "locationId": "loc_od_001",
+      "locationName": "Similipal Tiger Reserve",
+      "state": "Odisha",
+      "district": "Mayurbhanj",
+      "pmGatiShaktiScore": 58,
+      "connectivity": {
+        "roads": {
+          "score": 55,
+          "status": "Moderate",
+          "nearestHighway": "NH 18",
+          "distanceToHighway": 32,
+          "unit": "km",
+          "ruralRoadLength": 35,
+          "ruralRoadCondition": "Poor"
+        },
+        "railways": {
+          "score": 50,
+          "status": "Low",
+          "nearestStation": "Baripada",
+          "distanceToStation": 38,
+          "unit": "km"
+        },
+        "electricity": {
+          "score": 60,
+          "status": "Moderate",
+          "coverage": 68,
+          "reliability": "Low",
+          "hoursPerDay": 10
+        },
+        "telecom": {
+          "score": 58,
+          "status": "Moderate",
+          "mobileCoverage": 60,
+          "internetAvailability": 40,
+          "providers": ["BSNL", "Airtel"]
+        }
+      },
+      "lastUpdated": "2025-03-03"
+    },
+    {
+      "locationId": "loc_ts_001",
+      "locationName": "Kawal Tiger Reserve",
+      "state": "Telangana",
+      "district": "Adilabad",
+      "pmGatiShaktiScore": 70,
+      "connectivity": {
+        "roads": {
+          "score": 72,
+          "status": "Good",
+          "nearestHighway": "NH 30",
+          "distanceToHighway": 15,
+          "unit": "km",
+          "ruralRoadLength": 48,
+          "ruralRoadCondition": "Fair"
+        },
+        "railways": {
+          "score": 65,
+          "status": "Moderate",
+          "nearestStation": "Nainpur",
+          "distanceToStation": 20,
+          "unit": "km"
+        },
+        "electricity": {
+          "score": 72,
+          "status": "Good",
+          "coverage": 78,
+          "reliability": "Moderate",
+          "hoursPerDay": 16
+        },
+        "telecom": {
+          "score": 70,
+          "status": "Good",
+          "mobileCoverage": 75,
+          "internetAvailability": 60,
+          "providers": ["BSNL", "Airtel", "Jio"]
+        }
+      },
+      "lastUpdated": "2025-03-04"
+    },
+    {
+      "locationId": "loc_tr_001",
+      "locationName": "Dampa Tiger Reserve",
+      "state": "Tripura",
+      "district": "Mamit",
+      "pmGatiShaktiScore": 78,
+      "connectivity": {
+        "roads": {
+          "score": 80,
+          "status": "Good",
+          "nearestHighway": "NH 275",
+          "distanceToHighway": 10,
+          "unit": "km",
+          "ruralRoadLength": 50,
+          "ruralRoadCondition": "Good"
+        },
+        "railways": {
+          "score": 75,
+          "status": "Good",
+          "nearestStation": "Mysuru Junction",
+          "distanceToStation": 18,
+          "unit": "km"
+        },
+        "electricity": {
+          "score": 82,
+          "status": "Good",
+          "coverage": 92,
+          "reliability": "High",
+          "hoursPerDay": 22
+        },
+        "telecom": {
+          "score": 80,
+          "status": "Good",
+          "mobileCoverage": 88,
+          "internetAvailability": 75,
+          "providers": ["BSNL", "Airtel", "Jio", "Vi"]
+        }
+      },
+      "lastUpdated": "2025-03-02"
+    },
+    {
+      "locationId": "loc_tr_002",
+      "locationName": "Sepahijala Wildlife Sanctuary",
+      "state": "Tripura",
+      "district": "Sepahijala",
+      "pmGatiShaktiScore": 65,
+      "connectivity": {
+        "roads": {
+          "score": 68,
+          "status": "Moderate",
+          "nearestHighway": "NH 39",
+          "distanceToHighway": 20,
+          "unit": "km",
+          "ruralRoadLength": 40,
+          "ruralRoadCondition": "Fair"
+        },
+        "railways": {
+          "score": 60,
+          "status": "Moderate",
+          "nearestStation": "Satna",
+          "distanceToStation": 35,
+          "unit": "km"
+        },
+        "electricity": {
+          "score": 65,
+          "status": "Moderate",
+          "coverage": 72,
+          "reliability": "Moderate",
+          "hoursPerDay": 14
+        },
+        "telecom": {
+          "score": 62,
+          "status": "Moderate",
+          "mobileCoverage": 68,
+          "internetAvailability": 50,
+          "providers": ["BSNL", "Jio"]
+        }
+      },
+      "lastUpdated": "2025-03-07"
+    },
+    {
+      "locationId": "loc_009",
+      "locationName": "Periyar Tiger Reserve",
+      "state": "Kerala",
+      "district": "Idukki",
+      "pmGatiShaktiScore": 85,
+      "connectivity": {
+        "roads": {
+          "score": 88,
+          "status": "Excellent",
+          "nearestHighway": "NH 85",
+          "distanceToHighway": 6,
+          "unit": "km",
+          "ruralRoadLength": 55,
+          "ruralRoadCondition": "Excellent"
+        },
+        "railways": {
+          "score": 78,
+          "status": "Good",
+          "nearestStation": "Kottayam",
+          "distanceToStation": 25,
+          "unit": "km"
+        },
+        "electricity": {
+          "score": 92,
+          "status": "Excellent",
+          "coverage": 99,
+          "reliability": "High",
+          "hoursPerDay": 24
+        },
+        "telecom": {
+          "score": 90,
+          "status": "Excellent",
+          "mobileCoverage": 98,
+          "internetAvailability": 90,
+          "providers": ["BSNL", "Airtel", "Jio", "Vi"]
+        }
+      },
+      "lastUpdated": "2025-03-06"
+    },
+    {
+      "locationId": "loc_010",
+      "locationName": "Satpura Tiger Reserve",
+      "state": "Madhya Pradesh",
+      "district": "Hoshangabad",
+      "pmGatiShaktiScore": 72,
+      "connectivity": {
+        "roads": {
+          "score": 75,
+          "status": "Good",
+          "nearestHighway": "NH 69",
+          "distanceToHighway": 12,
+          "unit": "km",
+          "ruralRoadLength": 46,
+          "ruralRoadCondition": "Fair"
+        },
+        "railways": {
+          "score": 68,
+          "status": "Moderate",
+          "nearestStation": "Itarsi Junction",
+          "distanceToStation": 22,
+          "unit": "km"
+        },
+        "electricity": {
+          "score": 75,
+          "status": "Good",
+          "coverage": 82,
+          "reliability": "Moderate",
+          "hoursPerDay": 18
+        },
+        "telecom": {
+          "score": 72,
+          "status": "Good",
+          "mobileCoverage": 78,
+          "internetAvailability": 65,
+          "providers": ["BSNL", "Airtel", "Jio"]
+        }
+      },
+      "lastUpdated": "2025-03-07"
+    }
+  ]
+}

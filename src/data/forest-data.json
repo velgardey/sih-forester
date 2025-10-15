@@ -1,0 +1,443 @@
+{
+  "forestData": [
+    {
+      "locationId": "loc_mp_001",
+      "locationName": "Balaghat Tribal Area",
+      "state": "Madhya Pradesh",
+      "district": "Balaghat",
+      "protectedAreaType": "Tribal Area",
+      "establishedYear": 1974,
+      "totalArea": 858.98,
+      "unit": "sq km",
+      "forestTypes": [
+        {
+          "type": "Tropical Moist Deciduous",
+          "percentage": 45,
+          "area": 386.54
+        },
+        {
+          "type": "Alluvial Grassland",
+          "percentage": 40,
+          "area": 343.59
+        },
+        {
+          "type": "Tropical Semi-Evergreen",
+          "percentage": 15,
+          "area": 128.85
+        }
+      ],
+      "forestDensity": {
+        "veryDense": 35,
+        "moderatelyDense": 40,
+        "openForest": 20,
+        "scrub": 5
+      },
+      "canopyCover": 75,
+      "biodiversity": {
+        "floraSpecies": 478,
+        "faunaSpecies": 342,
+        "endangeredSpecies": 12,
+        "threatenedSpecies": 18
+      },
+      "keySpecies": ["One-horned Rhinoceros", "Bengal Tiger", "Asian Elephant", "Wild Water Buffalo"],
+      "conservationStatus": "Stable",
+      "threats": ["Flooding", "Poaching", "Human-Wildlife Conflict"],
+      "lastSurvey": "2024-12-15"
+    },
+    {
+      "locationId": "loc_mp_002",
+      "locationName": "Kanha Tiger Reserve",
+      "state": "Madhya Pradesh",
+      "district": "Mandla",
+      "protectedAreaType": "Tiger Reserve",
+      "establishedYear": 1973,
+      "totalArea": 2585,
+      "unit": "sq km",
+      "forestTypes": [
+        {
+          "type": "Mangrove",
+          "percentage": 85,
+          "area": 2197.25
+        },
+        {
+          "type": "Tidal Swamp",
+          "percentage": 10,
+          "area": 258.5
+        },
+        {
+          "type": "Salt Marsh",
+          "percentage": 5,
+          "area": 129.25
+        }
+      ],
+      "forestDensity": {
+        "veryDense": 45,
+        "moderatelyDense": 35,
+        "openForest": 15,
+        "scrub": 5
+      },
+      "canopyCover": 65,
+      "biodiversity": {
+        "floraSpecies": 334,
+        "faunaSpecies": 498,
+        "endangeredSpecies": 18,
+        "threatenedSpecies": 25
+      },
+      "keySpecies": ["Royal Bengal Tiger", "Saltwater Crocodile", "Gangetic Dolphin", "Olive Ridley Turtle"],
+      "conservationStatus": "Critical",
+      "threats": ["Sea Level Rise", "Cyclones", "Salinity Intrusion", "Tiger-Human Conflict"],
+      "lastSurvey": "2024-11-20"
+    },
+    {
+      "locationId": "loc_mp_003",
+      "locationName": "Panna Tiger Reserve",
+      "state": "Madhya Pradesh",
+      "district": "Panna",
+      "protectedAreaType": "Tiger Reserve",
+      "establishedYear": 1992,
+      "totalArea": 470,
+      "unit": "sq km",
+      "forestTypes": [
+        {
+          "type": "Tropical Evergreen",
+          "percentage": 60,
+          "area": 282
+        },
+        {
+          "type": "Tropical Moist Deciduous",
+          "percentage": 25,
+          "area": 117.5
+        },
+        {
+          "type": "Montane Shola",
+          "percentage": 15,
+          "area": 70.5
+        }
+      ],
+      "forestDensity": {
+        "veryDense": 55,
+        "moderatelyDense": 30,
+        "openForest": 12,
+        "scrub": 3
+      },
+      "canopyCover": 82,
+      "biodiversity": {
+        "floraSpecies": 2254,
+        "faunaSpecies": 456,
+        "endangeredSpecies": 25,
+        "threatenedSpecies": 32
+      },
+      "keySpecies": ["Nilgiri Tahr", "Lion-tailed Macaque", "Malabar Giant Squirrel", "Great Hornbill"],
+      "conservationStatus": "Stable",
+      "threats": ["Forest Fires", "Invasive Species", "Climate Change"],
+      "lastSurvey": "2025-01-10"
+    },
+    {
+      "locationId": "loc_mp_004",
+      "locationName": "Satpura Tiger Reserve",
+      "state": "Madhya Pradesh",
+      "district": "Hoshangabad",
+      "protectedAreaType": "Tiger Reserve",
+      "totalArea": 1250,
+      "unit": "sq km",
+      "forestTypes": [
+        {
+          "type": "Tropical Dry Deciduous",
+          "percentage": 55,
+          "area": 687.5
+        },
+        {
+          "type": "Tropical Moist Deciduous",
+          "percentage": 30,
+          "area": 375
+        },
+        {
+          "type": "Mixed Forest",
+          "percentage": 15,
+          "area": 187.5
+        }
+      ],
+      "forestDensity": {
+        "veryDense": 20,
+        "moderatelyDense": 45,
+        "openForest": 25,
+        "scrub": 10
+      },
+      "canopyCover": 50,
+      "biodiversity": {
+        "floraSpecies": 385,
+        "faunaSpecies": 198,
+        "endangeredSpecies": 8,
+        "threatenedSpecies": 14
+      },
+      "keySpecies": ["Leopard", "Sloth Bear", "Indian Gaur", "Four-horned Antelope"],
+      "conservationStatus": "Moderate",
+      "threats": ["Forest Fires", "Illegal Logging", "Encroachment"],
+      "lastSurvey": "2024-10-15"
+    },
+    {
+      "locationId": "loc_od_001",
+      "locationName": "Similipal Tiger Reserve",
+      "state": "Odisha",
+      "district": "Mayurbhanj",
+      "protectedAreaType": "Tiger Reserve",
+      "establishedYear": 1973,
+      "totalArea": 2750,
+      "unit": "sq km",
+      "forestTypes": [
+        {
+          "type": "Tropical Moist Deciduous",
+          "percentage": 60,
+          "area": 1650
+        },
+        {
+          "type": "Tropical Semi-Evergreen",
+          "percentage": 25,
+          "area": 687.5
+        },
+        {
+          "type": "Sal Forest",
+          "percentage": 15,
+          "area": 412.5
+        }
+      ],
+      "forestDensity": {
+        "veryDense": 40,
+        "moderatelyDense": 42,
+        "openForest": 15,
+        "scrub": 3
+      },
+      "canopyCover": 72,
+      "biodiversity": {
+        "floraSpecies": 1076,
+        "faunaSpecies": 398,
+        "endangeredSpecies": 15,
+        "threatenedSpecies": 22
+      },
+      "keySpecies": ["Bengal Tiger", "Asian Elephant", "Leopard", "Gaur"],
+      "conservationStatus": "Stable",
+      "threats": ["Forest Fires", "Poaching", "Mining Pressure"],
+      "lastSurvey": "2024-12-05"
+    },
+    {
+      "locationId": "loc_ts_001",
+      "locationName": "Kawal Tiger Reserve",
+      "state": "Telangana",
+      "district": "Adilabad",
+      "protectedAreaType": "Tiger Reserve",
+      "establishedYear": 1955,
+      "totalArea": 940,
+      "unit": "sq km",
+      "forestTypes": [
+        {
+          "type": "Tropical Moist Deciduous",
+          "percentage": 50,
+          "area": 470
+        },
+        {
+          "type": "Sal Forest",
+          "percentage": 35,
+          "area": 329
+        },
+        {
+          "type": "Bamboo Forest",
+          "percentage": 15,
+          "area": 141
+        }
+      ],
+      "forestDensity": {
+        "veryDense": 50,
+        "moderatelyDense": 38,
+        "openForest": 10,
+        "scrub": 2
+      },
+      "canopyCover": 80,
+      "biodiversity": {
+        "floraSpecies": 1000,
+        "faunaSpecies": 350,
+        "endangeredSpecies": 20,
+        "threatenedSpecies": 28
+      },
+      "keySpecies": ["Bengal Tiger", "Barasingha", "Indian Wild Dog", "Leopard"],
+      "conservationStatus": "Good",
+      "threats": ["Human-Wildlife Conflict", "Tourism Pressure"],
+      "lastSurvey": "2025-01-20"
+    },
+    {
+      "locationId": "loc_tr_001",
+      "locationName": "Dampa Tiger Reserve",
+      "state": "Tripura",
+      "district": "Mamit",
+      "protectedAreaType": "Tiger Reserve",
+      "establishedYear": 1988,
+      "totalArea": 643.39,
+      "unit": "sq km",
+      "forestTypes": [
+        {
+          "type": "Tropical Moist Deciduous",
+          "percentage": 55,
+          "area": 353.86
+        },
+        {
+          "type": "Tropical Dry Deciduous",
+          "percentage": 30,
+          "area": 193.02
+        },
+        {
+          "type": "Bamboo Forest",
+          "percentage": 15,
+          "area": 96.51
+        }
+      ],
+      "forestDensity": {
+        "veryDense": 60,
+        "moderatelyDense": 32,
+        "openForest": 7,
+        "scrub": 1
+      },
+      "canopyCover": 85,
+      "biodiversity": {
+        "floraSpecies": 850,
+        "faunaSpecies": 320,
+        "endangeredSpecies": 22,
+        "threatenedSpecies": 30
+      },
+      "keySpecies": ["Bengal Tiger", "Asian Elephant", "Indian Bison", "Leopard"],
+      "conservationStatus": "Good",
+      "threats": ["Human-Wildlife Conflict", "Invasive Species"],
+      "lastSurvey": "2024-11-28"
+    },
+    {
+      "locationId": "loc_tr_002",
+      "locationName": "Sepahijala Wildlife Sanctuary",
+      "state": "Tripura",
+      "district": "Sepahijala",
+      "protectedAreaType": "Wildlife Sanctuary",
+      "establishedYear": 1981,
+      "totalArea": 542.67,
+      "unit": "sq km",
+      "forestTypes": [
+        {
+          "type": "Tropical Dry Deciduous",
+          "percentage": 60,
+          "area": 325.6
+        },
+        {
+          "type": "Mixed Forest",
+          "percentage": 25,
+          "area": 135.67
+        },
+        {
+          "type": "Teak Forest",
+          "percentage": 15,
+          "area": 81.4
+        }
+      ],
+      "forestDensity": {
+        "veryDense": 35,
+        "moderatelyDense": 45,
+        "openForest": 17,
+        "scrub": 3
+      },
+      "canopyCover": 68,
+      "biodiversity": {
+        "floraSpecies": 658,
+        "faunaSpecies": 285,
+        "endangeredSpecies": 14,
+        "threatenedSpecies": 20
+      },
+      "keySpecies": ["Bengal Tiger", "Leopard", "Sloth Bear", "Chinkara"],
+      "conservationStatus": "Moderate",
+      "threats": ["Forest Fires", "Water Scarcity", "Mining Activities"],
+      "lastSurvey": "2024-09-15"
+    },
+    {
+      "locationId": "loc_009",
+      "locationName": "Periyar Tiger Reserve",
+      "state": "Kerala",
+      "district": "Idukki",
+      "protectedAreaType": "Tiger Reserve",
+      "establishedYear": 1978,
+      "totalArea": 925,
+      "unit": "sq km",
+      "forestTypes": [
+        {
+          "type": "Tropical Evergreen",
+          "percentage": 65,
+          "area": 601.25
+        },
+        {
+          "type": "Tropical Moist Deciduous",
+          "percentage": 25,
+          "area": 231.25
+        },
+        {
+          "type": "Grassland",
+          "percentage": 10,
+          "area": 92.5
+        }
+      ],
+      "forestDensity": {
+        "veryDense": 65,
+        "moderatelyDense": 28,
+        "openForest": 6,
+        "scrub": 1
+      },
+      "canopyCover": 88,
+      "biodiversity": {
+        "floraSpecies": 1965,
+        "faunaSpecies": 456,
+        "endangeredSpecies": 28,
+        "threatenedSpecies": 35
+      },
+      "keySpecies": ["Bengal Tiger", "Asian Elephant", "Nilgiri Tahr", "Lion-tailed Macaque"],
+      "conservationStatus": "Excellent",
+      "threats": ["Tourism Pressure", "Invasive Species"],
+      "lastSurvey": "2025-02-10"
+    },
+    {
+      "locationId": "loc_010",
+      "locationName": "Satpura Tiger Reserve",
+      "state": "Madhya Pradesh",
+      "district": "Hoshangabad",
+      "protectedAreaType": "Tiger Reserve",
+      "establishedYear": 1981,
+      "totalArea": 1427.72,
+      "unit": "sq km",
+      "forestTypes": [
+        {
+          "type": "Tropical Moist Deciduous",
+          "percentage": 55,
+          "area": 785.25
+        },
+        {
+          "type": "Tropical Dry Deciduous",
+          "percentage": 30,
+          "area": 428.32
+        },
+        {
+          "type": "Sal Forest",
+          "percentage": 15,
+          "area": 214.16
+        }
+      ],
+      "forestDensity": {
+        "veryDense": 42,
+        "moderatelyDense": 40,
+        "openForest": 15,
+        "scrub": 3
+      },
+      "canopyCover": 75,
+      "biodiversity": {
+        "floraSpecies": 1300,
+        "faunaSpecies": 425,
+        "endangeredSpecies": 16,
+        "threatenedSpecies": 24
+      },
+      "keySpecies": ["Bengal Tiger", "Leopard", "Indian Giant Squirrel", "Gaur"],
+      "conservationStatus": "Good",
+      "threats": ["Forest Fires", "Human-Wildlife Conflict"],
+      "lastSurvey": "2024-12-20"
+    }
+  ]
+}

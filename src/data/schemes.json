@@ -1,0 +1,124 @@
+{
+  "schemes": [
+    {
+      "id": "pm_kisan",
+      "name": "PM-KISAN",
+      "fullName": "Pradhan Mantri Kisan Samman Nidhi",
+      "description": "Income support scheme providing direct financial assistance to farmers",
+      "ministry": "Ministry of Agriculture & Farmers Welfare",
+      "eligibility": "Small and marginal farmers owning cultivable land",
+      "benefits": "₹6000 per year in three equal installments of ₹2000 each",
+      "icon": "Wheat",
+      "launchYear": 2019,
+      "website": "https://pmkisan.gov.in"
+    },
+    {
+      "id": "mgnrega",
+      "name": "MGNREGA",
+      "fullName": "Mahatma Gandhi National Rural Employment Guarantee Act",
+      "description": "Employment guarantee scheme providing wage employment to rural households",
+      "ministry": "Ministry of Rural Development",
+      "eligibility": "Adult members of rural households willing to do unskilled manual work",
+      "benefits": "100 days of guaranteed wage employment per household per year",
+      "icon": "Hammer",
+      "launchYear": 2005,
+      "website": "https://nrega.nic.in"
+    },
+    {
+      "id": "jal_jeevan",
+      "name": "JAL JEEVAN",
+      "fullName": "Jal Jeevan Mission",
+      "description": "Providing functional household tap connections to every rural household",
+      "ministry": "Ministry of Jal Shakti",
+      "eligibility": "All rural households",
+      "benefits": "Functional household tap connection with assured water supply",
+      "icon": "Droplet",
+      "launchYear": 2019,
+      "website": "https://jaljeevanmission.gov.in"
+    },
+    {
+      "id": "pmay",
+      "name": "PMAY",
+      "fullName": "Pradhan Mantri Awas Yojana - Gramin",
+      "description": "Housing for all scheme providing assistance for construction of pucca houses",
+      "ministry": "Ministry of Rural Development",
+      "eligibility": "Houseless and households living in kutcha houses in rural areas",
+      "benefits": "Financial assistance of ₹1.20 lakh in plain areas and ₹1.30 lakh in hilly areas",
+      "icon": "Home",
+      "launchYear": 2016,
+      "website": "https://pmayg.nic.in"
+    },
+    {
+      "id": "pmfby",
+      "name": "PMFBY",
+      "fullName": "Pradhan Mantri Fasal Bima Yojana",
+      "description": "Crop insurance scheme providing financial support to farmers in case of crop failure",
+      "ministry": "Ministry of Agriculture & Farmers Welfare",
+      "eligibility": "All farmers including sharecroppers and tenant farmers",
+      "benefits": "Insurance coverage for crop loss due to natural calamities, pests, and diseases",
+      "icon": "Shield",
+      "launchYear": 2016,
+      "website": "https://pmfby.gov.in"
+    },
+    {
+      "id": "pmuy",
+      "name": "PMUY",
+      "fullName": "Pradhan Mantri Ujjwala Yojana",
+      "description": "Providing LPG connections to women from BPL households",
+      "ministry": "Ministry of Petroleum & Natural Gas",
+      "eligibility": "Women from BPL households, SC/ST, PMAY, AAY, and forest dwellers",
+      "benefits": "Free LPG connection with financial assistance for first refill and stove",
+      "icon": "Flame",
+      "launchYear": 2016,
+      "website": "https://www.pmuy.gov.in"
+    },
+    {
+      "id": "nsap",
+      "name": "NSAP",
+      "fullName": "National Social Assistance Programme",
+      "description": "Social security scheme providing pension to elderly, widows, and persons with disabilities",
+      "ministry": "Ministry of Rural Development",
+      "eligibility": "BPL elderly (60+ years), widows, and persons with disabilities",
+      "benefits": "Monthly pension ranging from ₹200 to ₹500 depending on category",
+      "icon": "Users",
+      "launchYear": 1995,
+      "website": "https://nsap.nic.in"
+    },
+    {
+      "id": "pmgsy",
+      "name": "PMGSY",
+      "fullName": "Pradhan Mantri Gram Sadak Yojana",
+      "description": "Providing all-weather road connectivity to unconnected habitations",
+      "ministry": "Ministry of Rural Development",
+      "eligibility": "Unconnected habitations in rural areas",
+      "benefits": "All-weather road connectivity to eligible unconnected habitations",
+      "icon": "Route",
+      "launchYear": 2000,
+      "website": "https://pmgsy.nic.in"
+    },
+    {
+      "id": "pmkvy",
+      "name": "PMKVY",
+      "fullName": "Pradhan Mantri Kaushal Vikas Yojana",
+      "description": "Skill development scheme providing training to youth",
+      "ministry": "Ministry of Skill Development & Entrepreneurship",
+      "eligibility": "Youth aged 15-45 years",
+      "benefits": "Free skill training with certification and monetary rewards",
+      "icon": "GraduationCap",
+      "launchYear": 2015,
+      "website": "https://www.pmkvyofficial.org"
+    },
+    {
+      "id": "svamitva",
+      "name": "SVAMITVA",
+      "fullName": "Survey of Villages and Mapping with Improvised Technology in Village Areas",
+      "description": "Providing property cards to rural households using drone technology",
+      "ministry": "Ministry of Panchayati Raj",
+      "eligibility": "Rural households in inhabited areas",
+      "benefits": "Property ownership cards for residential properties in rural areas",
+      "icon": "MapPin",
+      "launchYear": 2020,
+      "website": "https://svamitva.nic.in"
+    }
+  ]
+}

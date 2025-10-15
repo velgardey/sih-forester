@@ -31,6 +31,7 @@ export function HeroSection() {
             alt="Map Illustration"
             fill
             className="relative object-cover rounded-lg shadow-2xl"
+            unoptimized
           />
         </div>
       </div>
