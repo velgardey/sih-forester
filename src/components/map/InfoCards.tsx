@@ -9,6 +9,7 @@ import {
   Leaf,
   Flame
 } from 'lucide-react';
+import { useEffect, useState } from 'react';
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts';
 
 interface Location {
@@ -56,12 +57,32 @@ interface InfoCardsProps {
 }
 
 export default function InfoCards({ location }: InfoCardsProps) {
+  const [constantsData, setConstantsData] = useState<any>(null);
+
+  useEffect(() => {
+    async function loadConstants() {
+      try {
+        const constants = await import('@/data/constants.json');
+        setConstantsData(constants.default);
+      } catch (error) {
+        console.error('Error loading constants:', error);
+      }
+    }
+    loadConstants();
+  }, []);
+
+  if (!constantsData) {
+    return <div className="text-center py-4">Loading...</div>;
+  }
+
+  const chartColors = constantsData.chartColors;
+
   // Prepare land use data for pie chart
   const landUseData = [
-    { name: 'Agricultural Land', value: location.landUse.agriculturalLand, color: '#fbbf24' },
-    { name: 'Forest Cover', value: location.landUse.forestCover, color: '#10b981' },
-    { name: 'Water Bodies', value: location.landUse.waterBodies, color: '#3b82f6' },
-    { name: 'Homesteads', value: location.landUse.homesteads, color: '#8b5cf6' },
+    { name: 'Agricultural Land', value: location.landUse.agriculturalLand, color: chartColors.agriculturalLand },
+    { name: 'Forest Cover', value: location.landUse.forestCover, color: chartColors.forestCover },
+    { name: 'Water Bodies', value: location.landUse.waterBodies, color: chartColors.waterBodies },
+    { name: 'Homesteads', value: location.landUse.homesteads, color: chartColors.homesteads },
   ];
 
   const getStatusColor = (status: string) => {
@@ -101,12 +122,11 @@ export default function InfoCards({ location }: InfoCardsProps) {
     }
   };
 
-  const schemes = [
-    { id: 'pmKisan', name: 'PM-KISAN', eligible: location.schemes.pmKisan },
-    { id: 'mgnrega', name: 'MGNREGA', eligible: location.schemes.mgnrega },
-    { id: 'jalJeevan', name: 'JAL JEEVAN', eligible: location.schemes.jalJeevan },
-    { id: 'pmay', name: 'PMAY', eligible: location.schemes.pmay },
-  ];
+  const schemes = constantsData.schemes.map((scheme: { id: string; displayName: string }) => ({
+    id: scheme.id,
+    name: scheme.displayName,
+    eligible: location.schemes[scheme.id as keyof typeof location.schemes]
+  }));
 
   return (
     <div className="space-y-4">
@@ -228,7 +248,7 @@ export default function InfoCards({ location }: InfoCardsProps) {
       <div className="bg-white rounded-xl border border-gray-200 p-5 shadow-sm hover:shadow-md transition-shadow">
         <h3 className="text-sm font-semibold text-black mb-4">Scheme Eligibility</h3>
         <div className="space-y-2.5">
-          {schemes.map((scheme) => (
+          {schemes.map((scheme: { id: string; name: string; eligible: boolean }) => (
             <div
               key={scheme.id}
               className={`flex items-center justify-between p-2 rounded-lg ${

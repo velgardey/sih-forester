@@ -1,0 +1,100 @@
+{
+  "documentTypes": [
+    "IFR Claim",
+    "CR Claim",
+    "Village Assembly Minutes",
+    "Forest Clearance Certificate",
+    "Title Deed",
+    "Survey Map",
+    "Evidence Documentation"
+  ],
+  "states": [
+    "Assam",
+    "Chhattisgarh",
+    "Karnataka",
+    "Kerala",
+    "Madhya Pradesh",
+    "Maharashtra",
+    "Odisha",
+    "Telangana",
+    "Tripura",
+    "West Bengal"
+  ],
+  "districts": {
+    "Assam": ["Golaghat", "Jorhat", "Sivasagar"],
+    "Chhattisgarh": ["Bastar", "Dantewada", "Kanker"],
+    "Karnataka": ["Kodagu", "Mysuru", "Chamarajanagar"],
+    "Kerala": ["Thiruvananthapuram", "Idukki", "Wayanad"],
+    "Madhya Pradesh": ["Balaghat", "Mandla", "Hoshangabad", "Panna"],
+    "Maharashtra": ["Gadchiroli", "Chandrapur", "Gondia"],
+    "Odisha": ["Mayurbhanj", "Keonjhar", "Sundargarh"],
+    "Telangana": ["Adilabad", "Khammam", "Warangal"],
+    "Tripura": ["Mamit", "Sepahijala", "Dhalai"],
+    "West Bengal": ["South 24 Parganas", "North 24 Parganas", "Jalpaiguri"]
+  },
+  "villages": {
+    "Golaghat": ["Kohora", "Bagori", "Agoratoli"],
+    "Balaghat": ["Baihar", "Lanji", "Waraseoni"],
+    "South 24 Parganas": ["Gosaba", "Basanti", "Canning"],
+    "Mayurbhanj": ["Jashipur", "Karanjia", "Rairangpur"],
+    "Mandla": ["Kanha", "Kisli", "Mukki"],
+    "Thiruvananthapuram": ["Bonacaud", "Vithura", "Ponmudi"],
+    "Kodagu": ["Veeranahosahalli", "Srimangala", "Virajpet"],
+    "Panna": ["Hinauta", "Madla", "Akola"],
+    "Idukki": ["Kumily", "Munnar", "Thekkady"],
+    "Hoshangabad": ["Madhai", "Churna", "Bori"],
+    "Adilabad": ["Jannaram", "Kagaznagar", "Bellampalli"],
+    "Khammam": ["Bhadrachalam", "Kothagudem", "Yellandu"],
+    "Warangal": ["Mulugu", "Eturnagaram", "Govindaraopet"],
+    "Mamit": ["Dampa", "Phuldungsei", "Teirei"],
+    "Sepahijala": ["Bishalgarh", "Sonamura", "Melaghar"],
+    "Dhalai": ["Ambassa", "Kamalpur", "Salema"]
+  },
+  "fileTypes": {
+    "accepted": ["application/pdf", "image/jpeg", "image/png", "image/tiff"],
+    "extensions": [".pdf", ".jpg", ".jpeg", ".png", ".tiff", ".tif"]
+  },
+  "focusStates": ["Madhya Pradesh", "Tripura", "Odisha", "Telangana"],
+  "highlightWords": [
+    "legacy",
+    "document",
+    "AI",
+    "powered",
+    "DOC",
+    "FRA",
+    "Atlas",
+    "government",
+    "schemes"
+  ],
+  "schemes": [
+    {
+      "id": "pmKisan",
+      "name": "PM-KISAN",
+      "displayName": "PM-KISAN"
+    },
+    {
+      "id": "mgnrega",
+      "name": "MGNREGA",
+      "displayName": "MGNREGA"
+    },
+    {
+      "id": "jalJeevan",
+      "name": "JAL JEEVAN",
+      "displayName": "JAL JEEVAN"
+    },
+    {
+      "id": "pmay",
+      "name": "PMAY",
+      "displayName": "PMAY"
+    }
+  ],
+  "chartColors": {
+    "granted": "#10b981",
+    "pending": "#f59e0b",
+    "rejected": "#ef4444",
+    "agriculturalLand": "#fbbf24",
+    "forestCover": "#10b981",
+    "waterBodies": "#3b82f6",
+    "homesteads": "#8b5cf6"
+  }
+}

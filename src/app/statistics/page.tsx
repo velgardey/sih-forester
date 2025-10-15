@@ -69,10 +69,8 @@ export default function StatisticsPage() {
   const [claimsData, setClaimsData] = useState<ClaimsData | null>(null);
   const [locationsData, setLocationsData] = useState<LocationsData | null>(null);
   const [schemesData, setSchemesData] = useState<SchemesData | null>(null);
+  const [constantsData, setConstantsData] = useState<any>(null);
   const [loading, setLoading] = useState(true);
-  
-  // Focus states
-  const FOCUS_STATES = ['Madhya Pradesh', 'Tripura', 'Odisha', 'Telangana'];
 
   useEffect(() => {
     async function loadData() {
@@ -81,10 +79,12 @@ export default function StatisticsPage() {
         const claimsModule = await import('@/data/claims-filtered.json');
         const locationsModule = await import('@/data/locations-filtered.json');
         const schemesModule = await import('@/data/schemes.json');
+        const constantsModule = await import('@/data/constants.json');
         
         setClaimsData(claimsModule.default);
         setLocationsData(locationsModule.default);
         setSchemesData(schemesModule.default);
+        setConstantsData(constantsModule.default);
       } catch (error) {
         console.error('Error loading data:', error);
       } finally {
@@ -109,7 +109,7 @@ export default function StatisticsPage() {
     );
   }
 
-  if (!claimsData || !locationsData || !schemesData) {
+  if (!claimsData || !locationsData || !schemesData || !constantsData) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
         <Header activeView="statistics" />
@@ -122,6 +122,10 @@ export default function StatisticsPage() {
       </div>
     );
   }
+
+  // Get focus states from constants
+  const FOCUS_STATES = constantsData.focusStates;
+  const chartColors = constantsData.chartColors;
 
   // Data is already filtered for focus states
   const focusStatesData = claimsData.progressSummary.byState;
@@ -139,9 +143,9 @@ export default function StatisticsPage() {
 
   // Prepare data for charts
   const claimStatusData = [
-    { name: 'Granted', value: totalGranted, color: '#10b981' },
-    { name: 'Pending', value: totalPending, color: '#f59e0b' },
-    { name: 'Rejected', value: totalRejected, color: '#ef4444' }
+    { name: 'Granted', value: totalGranted, color: chartColors.granted },
+    { name: 'Pending', value: totalPending, color: chartColors.pending },
+    { name: 'Rejected', value: totalRejected, color: chartColors.rejected }
   ];
 
   const stateChartData = focusStatesData.map(state => ({
@@ -396,7 +400,7 @@ export default function StatisticsPage() {
               <h2 className="text-lg font-semibold text-black">Focus States Progress Details</h2>
             </div>
             <div className="flex gap-2">
-              {FOCUS_STATES.map((state, idx) => (
+              {FOCUS_STATES.map((state: string, idx: number) => (
                 <span key={idx} className="px-3 py-1 bg-green-50 text-green-700 text-xs font-medium rounded-full border border-green-200">
                   {state}
                 </span>

@@ -17,55 +17,19 @@ interface MetadataForm {
   description: string;
 }
 
-const ACCEPTED_FILE_TYPES = ['application/pdf', 'image/jpeg', 'image/png', 'image/tiff'];
-const ACCEPTED_EXTENSIONS = ['.pdf', '.jpg', '.jpeg', '.png', '.tiff', '.tif'];
-
-const DOCUMENT_TYPES = [
-  'IFR Claim',
-  'CR Claim',
-  'Village Assembly Minutes',
-  'Forest Clearance Certificate',
-  'Title Deed',
-  'Survey Map',
-  'Evidence Documentation'
-];
-
-const STATES = [
-  'Assam',
-  'Chhattisgarh',
-  'Karnataka',
-  'Kerala',
-  'Madhya Pradesh',
-  'Maharashtra',
-  'Odisha',
-  'West Bengal'
-];
-
-const DISTRICTS: Record<string, string[]> = {
-  'Assam': ['Golaghat', 'Jorhat', 'Sivasagar'],
-  'Chhattisgarh': ['Bastar', 'Dantewada', 'Kanker'],
-  'Karnataka': ['Kodagu', 'Mysuru', 'Chamarajanagar'],
-  'Kerala': ['Thiruvananthapuram', 'Idukki', 'Wayanad'],
-  'Madhya Pradesh': ['Balaghat', 'Mandla', 'Hoshangabad', 'Panna'],
-  'Maharashtra': ['Gadchiroli', 'Chandrapur', 'Gondia'],
-  'Odisha': ['Mayurbhanj', 'Keonjhar', 'Sundargarh'],
-  'West Bengal': ['South 24 Parganas', 'North 24 Parganas', 'Jalpaiguri']
-};
-
-const VILLAGES: Record<string, string[]> = {
-  'Golaghat': ['Kohora', 'Bagori', 'Agoratoli'],
-  'Balaghat': ['Baihar', 'Lanji', 'Waraseoni'],
-  'South 24 Parganas': ['Gosaba', 'Basanti', 'Canning'],
-  'Mayurbhanj': ['Jashipur', 'Karanjia', 'Baripada'],
-  'Mandla': ['Kisli', 'Kanha', 'Bichhiya'],
-  'Thiruvananthapuram': ['Bonacaud', 'Vithura', 'Ponmudi'],
-  'Kodagu': ['Veeranahosahalli', 'Srimangala', 'Virajpet'],
-  'Panna': ['Hinauta', 'Ajaygarh', 'Pawai'],
-  'Idukki': ['Kumily', 'Munnar', 'Thekkady'],
-  'Hoshangabad': ['Madhai', 'Pachmarhi', 'Itarsi']
-};
+interface ConstantsData {
+  documentTypes: string[];
+  states: string[];
+  districts: Record<string, string[]>;
+  villages: Record<string, string[]>;
+  fileTypes: {
+    accepted: string[];
+    extensions: string[];
+  };
+}
 
 export default function UploadInterface({ onUploadComplete }: UploadInterfaceProps) {
+  const [constantsData, setConstantsData] = useState<ConstantsData | null>(null);
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [isDragging, setIsDragging] = useState(false);
   const [error, setError] = useState<string>('');
@@ -86,7 +50,23 @@ export default function UploadInterface({ onUploadComplete }: UploadInterfacePro
   const selectedState = watch('state');
   const selectedDistrict = watch('district');
 
-  const validateFile = (file: File): boolean => {
+  useEffect(() => {
+    async function loadConstants() {
+      try {
+        const constants = await import('@/data/constants.json');
+        setConstantsData(constants.default);
+      } catch (error) {
+        console.error('Error loading constants:', error);
+      }
+    }
+    loadConstants();
+  }, []);
+
+  const validateFile = useCallback((file: File): boolean => {
+    if (!constantsData) return false;
+    
+    const ACCEPTED_FILE_TYPES = constantsData.fileTypes.accepted;
+    const ACCEPTED_EXTENSIONS = constantsData.fileTypes.extensions;
     const fileExtension = '.' + file.name.split('.').pop()?.toLowerCase();
     
     if (!ACCEPTED_FILE_TYPES.includes(file.type) && !ACCEPTED_EXTENSIONS.includes(fileExtension)) {
@@ -96,7 +76,7 @@ export default function UploadInterface({ onUploadComplete }: UploadInterfacePro
     
     setError('');
     return true;
-  };
+  }, [constantsData]);
 
   const handleFileSelect = (file: File) => {
     if (validateFile(file)) {
@@ -124,7 +104,7 @@ export default function UploadInterface({ onUploadComplete }: UploadInterfacePro
         setSelectedFile(files[0]);
       }
     }
-  }, []);
+  }, [validateFile]);
 
   const handleFileInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files;
@@ -140,21 +120,21 @@ export default function UploadInterface({ onUploadComplete }: UploadInterfacePro
 
   // Update districts when state changes
   useEffect(() => {
-    if (selectedState) {
-      setAvailableDistricts(DISTRICTS[selectedState] || []);
+    if (selectedState && constantsData) {
+      setAvailableDistricts(constantsData.districts[selectedState] || []);
       setValue('district', '');
       setValue('village', '');
       setAvailableVillages([]);
     }
-  }, [selectedState, setValue]);
+  }, [selectedState, setValue, constantsData]);
 
   // Update villages when district changes
   useEffect(() => {
-    if (selectedDistrict) {
-      setAvailableVillages(VILLAGES[selectedDistrict] || []);
+    if (selectedDistrict && constantsData) {
+      setAvailableVillages(constantsData.villages[selectedDistrict] || []);
       setValue('village', '');
     }
-  }, [selectedDistrict, setValue]);
+  }, [selectedDistrict, setValue, constantsData]);
 
   const onSubmit = (data: MetadataForm) => {
     if (!selectedFile) {
@@ -172,6 +152,14 @@ export default function UploadInterface({ onUploadComplete }: UploadInterfacePro
     reset();
     setSelectedFile(null);
   };
+
+  if (!constantsData) {
+    return <div className="text-center py-8">Loading upload form...</div>;
+  }
+
+  const DOCUMENT_TYPES = constantsData.documentTypes;
+  const STATES = constantsData.states;
+  const ACCEPTED_EXTENSIONS = constantsData.fileTypes.extensions;
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">

@@ -1,7 +1,7 @@
 'use client';
 
 import { Search, X, SlidersHorizontal } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 interface DocumentFiltersProps {
   onSearchChange: (search: string) => void;
@@ -19,39 +19,26 @@ export interface FilterState {
 
 export type SortOption = 'date-desc' | 'date-asc' | 'name-asc' | 'name-desc' | 'location';
 
-const DOCUMENT_TYPES = [
-  'IFR Claim',
-  'CR Claim',
-  'Village Assembly Minutes',
-  'Forest Clearance Certificate',
-  'Title Deed',
-  'Survey Map',
-  'Evidence Documentation'
-];
-
-const STATES = [
-  'Assam',
-  'Chhattisgarh',
-  'Karnataka',
-  'Kerala',
-  'Madhya Pradesh',
-  'Maharashtra',
-  'Odisha',
-  'West Bengal'
-];
-
-const DISTRICTS: Record<string, string[]> = {
-  'Assam': ['Golaghat', 'Jorhat', 'Sivasagar'],
-  'Chhattisgarh': ['Bastar', 'Dantewada', 'Kanker'],
-  'Karnataka': ['Kodagu', 'Mysuru', 'Chamarajanagar'],
-  'Kerala': ['Thiruvananthapuram', 'Idukki', 'Wayanad'],
-  'Madhya Pradesh': ['Balaghat', 'Mandla', 'Hoshangabad', 'Panna'],
-  'Maharashtra': ['Gadchiroli', 'Chandrapur', 'Gondia'],
-  'Odisha': ['Mayurbhanj', 'Keonjhar', 'Sundargarh'],
-  'West Bengal': ['South 24 Parganas', 'North 24 Parganas', 'Jalpaiguri']
-};
+interface ConstantsData {
+  documentTypes: string[];
+  states: string[];
+  districts: Record<string, string[]>;
+}
 
 export default function DocumentFilters({ onSearchChange, onFilterChange, onSortChange }: DocumentFiltersProps) {
+  const [constantsData, setConstantsData] = useState<ConstantsData | null>(null);
+
+  useEffect(() => {
+    async function loadConstants() {
+      try {
+        const constants = await import('@/data/constants.json');
+        setConstantsData(constants.default);
+      } catch (error) {
+        console.error('Error loading constants:', error);
+      }
+    }
+    loadConstants();
+  }, []);
   const [searchTerm, setSearchTerm] = useState('');
   const [showFilters, setShowFilters] = useState(false);
   const [filters, setFilters] = useState<FilterState>({
@@ -73,8 +60,8 @@ export default function DocumentFilters({ onSearchChange, onFilterChange, onSort
     const newFilters = { ...filters, [key]: value };
     
     // Update districts when state changes
-    if (key === 'state') {
-      setAvailableDistricts(DISTRICTS[value] || []);
+    if (key === 'state' && constantsData) {
+      setAvailableDistricts(constantsData.districts[value] || []);
       newFilters.district = '';
     }
     
@@ -103,6 +90,13 @@ export default function DocumentFilters({ onSearchChange, onFilterChange, onSort
   };
 
   const hasActiveFilters = Object.values(filters).some(v => v !== '') || searchTerm !== '';
+
+  if (!constantsData) {
+    return <div className="text-center py-4">Loading filters...</div>;
+  }
+
+  const DOCUMENT_TYPES = constantsData.documentTypes;
+  const STATES = constantsData.states;
 
   return (
     <div className="space-y-4">

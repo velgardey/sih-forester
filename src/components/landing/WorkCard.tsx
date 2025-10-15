@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 interface WorkCardProps {
   illustration: React.ReactNode;
@@ -7,24 +7,26 @@ interface WorkCardProps {
   borderColor?: string;
 }
 
-const highlightWords = [
-  'legacy',
-  'document',
-  'AI',
-  'powered',
-  'DOC',
-  'FRA',
-  'Atlas',
-  'government',
-  'schemes',
-];
-
 export const WorkCard: React.FC<WorkCardProps> = ({
   illustration,
   title,
   description,
   borderColor = 'border-transparent',
 }) => {
+  const [highlightWords, setHighlightWords] = useState<string[]>([]);
+
+  useEffect(() => {
+    async function loadConstants() {
+      try {
+        const constants = await import('@/data/constants.json');
+        setHighlightWords(constants.default.highlightWords);
+      } catch (error) {
+        console.error('Error loading constants:', error);
+      }
+    }
+    loadConstants();
+  }, []);
+
   return (
     <div
       className={`bg-white rounded-xl shadow-lg p-6 text-center w-full max-w-sm transform hover:scale-105 transition-transform duration-300 border-2 ${borderColor}`}

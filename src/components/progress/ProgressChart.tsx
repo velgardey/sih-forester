@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { PieChart, Pie, Cell, ResponsiveContainer, Legend, Tooltip } from 'recharts';
 import { ProgressSummary } from '@/types/claim';
 
@@ -10,15 +10,32 @@ interface ProgressChartProps {
 }
 
 export default function ProgressChart({ data, showLegend = true }: ProgressChartProps) {
+  const [chartColors, setChartColors] = useState<any>(null);
   const { totalClaims, grantedClaims, pendingClaims, rejectedClaims } = data;
   
+  useEffect(() => {
+    async function loadConstants() {
+      try {
+        const constants = await import('@/data/constants.json');
+        setChartColors(constants.default.chartColors);
+      } catch (error) {
+        console.error('Error loading constants:', error);
+      }
+    }
+    loadConstants();
+  }, []);
+
+  if (!chartColors) {
+    return <div className="text-center py-4">Loading chart...</div>;
+  }
+
   const underReviewClaims = totalClaims - grantedClaims - pendingClaims - rejectedClaims;
 
   const chartData = [
-    { name: 'Granted', value: grantedClaims, color: '#10b981' },
-    { name: 'Pending', value: pendingClaims, color: '#f59e0b' },
-    { name: 'Under Review', value: underReviewClaims, color: '#3b82f6' },
-    { name: 'Rejected', value: rejectedClaims, color: '#ef4444' },
+    { name: 'Granted', value: grantedClaims, color: chartColors.granted },
+    { name: 'Pending', value: pendingClaims, color: chartColors.pending },
+    { name: 'Under Review', value: underReviewClaims, color: chartColors.waterBodies },
+    { name: 'Rejected', value: rejectedClaims, color: chartColors.rejected },
   ].filter(item => item.value > 0);
 
   const CustomTooltip = ({ active, payload }: any) => {
